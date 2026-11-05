@@ -153,6 +153,25 @@
             margin-left: 6px;
         }
 
+        /* Responsive Video Container for Modal */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         /* Animated Buttons */
         .btn-whatsapp {
             background: linear-gradient(45deg, #25d366, #128c7e);
@@ -252,7 +271,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="modalBody">
-                    <!-- Dynamic Details -->
+                    <!-- Dynamic Details & Video Embed -->
                 </div>
                 <div class="modal-footer border-secondary justify-content-between">
                     <div>
@@ -399,8 +418,9 @@
                 price: 240,
                 originalPrice: 15000,
                 image: "images/mayajal_course.jpg",
+                videoEmbed: `<div class="video-container mb-3"><iframe src="https://player.vimeo.com/video/1136401216?h=77791374e7" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe></div>`,
                 shortDesc: "৫৫ টি ক্লাস, ৬০ ঘণ্টা+ ভিডিও এবং সাথে ফ্রি CapCut Pro!",
-                fullDesc: `<ul class="lh-lg"><li>৫৫ টি মাস্টারক্লাস ভিডিও লেসন</li><li>মায়াজাল স্টাইলে রহস্যময় ভিডিও মেকিং সিক্রেট</li></ul>`
+                fullDesc: `<ul class="lh-lg"><li>৫৫ টি মাস্টারক্লাস ভিডিও লেসন</li><li>৬০ ঘণ্টার বেশি প্র্যাকটিক্যাল গাইডলাইন</li><li>CapCut Pro ফুল ভার্সন সম্পূর্ণ ফ্রি</li><li>মায়াজাল স্টাইলে রহস্যময় ভিডিও মেকিং ও ভয়েসওভার সিক্রেট</li><li>ইউটিউব অটোমেশন ও ক্যাশ কাউ চ্যানেল তৈরির কৌশল</li></ul>`
             },
             {
                 id: 13,
@@ -477,10 +497,12 @@
             if (!course) return;
 
             document.getElementById('modalTitle').innerText = course.title;
+            
+            // If course has embedded video preview (Vimeo / YouTube)
+            let videoHtml = course.videoEmbed ? course.videoEmbed : `<div class="text-center mb-3"><img src="${course.image}" class="img-fluid rounded border border-secondary" style="max-height: 240px;" onerror="this.src='https://via.placeholder.com/600x300?text=One+Digital'"></div>`;
+            
             document.getElementById('modalBody').innerHTML = `
-                <div class="text-center mb-3">
-                    <img src="${course.image}" class="img-fluid rounded border border-secondary" style="max-height: 240px;" onerror="this.src='https://via.placeholder.com/600x300?text=One+Digital'">
-                </div>
+                ${videoHtml}
                 <h6 class="fw-bold text-info">প্রোডাক্টের বিবরণ:</h6>
                 <div>${course.fullDesc}</div>
             `;
