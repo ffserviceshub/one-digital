@@ -1,60 +1,196 @@
-// আপনার হোয়াটসঅ্যাপ নম্বর (কান্ট্রি কোড সহ):
+// Apnar WhatsApp Number (Country code shoho):
 const WHATSAPP_NUMBER = "8801700000000"; 
 
-// কোর্স ডাটাবেজ
+// Complete Product Database (All Products Included with Updated Prices)
 const courses = [
+    // --- OTT & AI Subscriptions ---
     {
         id: 1,
+        title: "ChatGPT Go 1 Device (1 Month)",
+        category: "subscription",
+        price: 250,
+        originalPrice: 400,
+        image: "images/chatgpt.jpg", 
+        shortDesc: "1 masher jonno 1ti device-e beboharer jonno ChatGPT Go subscription.",
+        fullDesc: "1ti device-e personal beboharer jonno 1 masher ChatGPT Go access. Fast response o instant delivery."
+    },
+    {
+        id: 2,
+        title: "ChatGPT Plus 1 Device (1 Month)",
+        category: "subscription",
+        price: 459,
+        originalPrice: 700,
+        image: "images/chatgpt_plus.jpg", 
+        shortDesc: "1 masher jonno 1ti device-e beboharer jonno ChatGPT Plus (GPT-4) access.",
+        fullDesc: "GPT-4, DALL-E 3 o advanced feature-sho 1 device-er jonno 1 masher instant access."
+    },
+    {
+        id: 3,
+        title: "ChatGPT Go Full Account (1 Month)",
+        category: "subscription",
+        price: 700,
+        originalPrice: 1000,
+        image: "images/chatgpt_full.jpg", 
+        shortDesc: "1 masher full private account (ChatGPT Go).",
+        fullDesc: "Shompurno private full account. Apnar nijo email ba prodotto account-e 1 masher full access."
+    },
+    {
+        id: 4,
+        title: "ChatGPT Plus Full Account (1 Month)",
+        category: "subscription",
+        price: 2000,
+        originalPrice: 2800,
+        image: "images/chatgpt_plus_full.jpg", 
+        shortDesc: "1 masher jonno shompurno private ChatGPT Plus full account.",
+        fullDesc: "ChatGPT Plus-er shob premium feature sho 100% private full account 1 masher jonno."
+    },
+    {
+        id: 5,
+        title: "YouTube Premium (1 Month)",
+        category: "subscription",
+        price: 200,
+        originalPrice: 350,
+        image: "images/yt_premium.jpg", 
+        shortDesc: "1 masher jonno ad-free YouTube video ebong YouTube Music.",
+        fullDesc: "Biggapon chara video dekha, background play ebong YouTube Music premium access (1 mash)."
+    },
+    {
+        id: 6,
+        title: "YouTube Premium (6 Months)",
+        category: "subscription",
+        price: 500,
+        originalPrice: 900,
+        image: "images/yt_premium_6m.jpg", 
+        shortDesc: "6 masher jonno ad-free YouTube video ebong YouTube Music.",
+        fullDesc: "Biggapon chara video dekha, background play ebong YouTube Music premium access (6 mash)."
+    },
+    {
+        id: 7,
+        title: "CapCut Premium",
+        category: "subscription",
+        price: 200,
+        originalPrice: 400,
+        image: "images/capcut.jpg", 
+        shortDesc: "CapCut Pro-er shob all-in-one video editing effects o features.",
+        fullDesc: "Watermark chara video export, shokol professional effect, filter o text template access."
+    },
+    {
+        id: 8,
+        title: "Gemini Premium Subscription",
+        category: "subscription",
+        price: 250,
+        originalPrice: 500,
+        image: "images/gemini.jpg", 
+        shortDesc: "Google Gemini Advanced-er sherah AI power o features access.",
+        fullDesc: "Google AI Advanced model-er druto uttor, coding o content writing support sho premium access."
+    },
+
+    // --- Courses & Software Packs ---
+    {
+        id: 9,
         title: "গোপাল ভাঁড় নাচ-বল্টু YouTube আপলোড সিক্রেট কোর্স",
         category: "youtube",
-        price: 499,
+        price: 200,
         originalPrice: 1500,
         image: "images/gopal_bhar_course.jpg", 
-        shortDesc: "শূন্য থেকে ইউটিউব ক্যারিয়ার গড়ুন এবং গোপাল ভাঁড় & বল্টু ভিডিও দিয়ে আয় করুন!",
+        shortDesc: "Shunno theke YouTube career gorun ebong Gopal Bhar & Boltu video diye ay korun!",
         fullDesc: `
             <ul class="lh-lg">
-                <li>ভিডিও তৈরি ও আপলোডের সম্পূর্ণ গাইড</li>
-                <li>ট্রেন্ডিং টপিক খুঁজে কনটেন্ট তৈরি</li>
-                <li>চ্যানেল অপটিমাইজেশন ও SEO কৌশল</li>
-                <li>ইউটিউব মনিটাইজেশন সম্পর্কে A to Z</li>
-                <li>আয় বাড়ানোর কৌশল ও ইনকামের উৎস</li>
-                <li>Watch Time ও ভিডিও রিটেনশন বাড়ানোর উপায়</li>
-                <li class="text-info fw-bold">অর্ডার দেওয়ার সাথে সাথেই ইমেইলে ইনস্ট্যান্ট ড্রাইভ লিংক পেয়ে যাবেন!</li>
+                <li>Video toiri o uploader shompurno guide</li>
+                <li>Trending topic khunje content toiri</li>
+                <li>Channel optimization o SEO koushol</li>
+                <li>YouTube monetization shomporke A to Z</li>
+                <li>Ay baranor koushol o incomer utsho</li>
+                <li>Watch Time o video retention baranor upay</li>
+                <li class="text-info fw-bold">Order deoyar shathe shathei emaile instant Drive link peye jaben!</li>
             </ul>
         `
     },
     {
-        id: 2,
-        title: "Web Development Masterclass",
-        category: "web",
-        price: 499,
-        originalPrice: 1999,
-        image: "images/web_dev.jpg",
-        shortDesc: "HTML, CSS, JavaScript এবং Responsive Design-এর সম্পূর্ণ গাইডলাইন।",
-        fullDesc: "জিরো থেকে ওয়েবসাইট তৈরি এবং ফ্রি সার্ভারে হোস্ট করার পূর্ণাঙ্গ প্র্যাকটিক্যাল কোর্স।"
+        id: 10,
+        title: "PC Software Combo Pack (পিসির অল-ইন-ওয়ান সফটওয়্যার)",
+        category: "software",
+        price: 349,
+        originalPrice: 999,
+        image: "images/pc_software_combo.jpg",
+        shortDesc: "Computerer shob dorkari software ekhon ekshathe, ek packege! (Lifetime meyade pre-activated)",
+        fullDesc: `
+            <ul class="lh-lg">
+                <li><strong>Windows OS:</strong> Windows XP / 7 / 10 / 11 Pro</li>
+                <li><strong>Microsoft Office:</strong> Office 2007 theke 2024 ebong Office 365 (Word, Excel, PowerPoint, Outlook, OneNote sho)</li>
+                <li><strong>Design & Editing Tools:</strong> Photoshop, Illustrator, Premiere Pro, After Effects, CorelDRAW, Camtasia, CapCut Pro, Lightroom, XD, InDesign, DrawPad, Topaz Studio</li>
+                <li><strong>Utility Tools:</strong> IDM, 4K Downloader, Folder Locker, Data Recovery Tools, Bijoy Bayanno, AutoCAD</li>
+                <li class="text-warning fw-bold">Bishesh Bonus: 50GB+ Graphics collection (7,000+ file)</li>
+            </ul>
+        `
     },
     {
-        id: 3,
+        id: 11,
+        title: "Windows Genuine License & Lifetime Activation Key",
+        category: "software",
+        price: 250,
+        originalPrice: 1000,
+        image: "images/windows_activation.jpg",
+        shortDesc: "Windows 10/11 Pro & Home - 25-Digit Product Key sho lifetime genuine activation.",
+        fullDesc: `
+            <ul class="lh-lg">
+                <li>Windows 10/11 Pro & Home Support</li>
+                <li>Full Lifetime Activation</li>
+                <li>Genuine License Key (25-Digit Product Key)</li>
+                <li>24/7 Technical Support</li>
+            </ul>
+        `
+    },
+    {
+        id: 12,
+        title: "মায়াজালের ইউটিউব সিক্রেট কোর্স",
+        category: "youtube",
+        price: 240,
+        originalPrice: 15000,
+        image: "images/mayajal_course.jpg",
+        shortDesc: "55 ti class, 60 ghanta+ video ebong shathe free CapCut Pro!",
+        fullDesc: `
+            <ul class="lh-lg">
+                <li>55 ti shompurno masterclass lesson</li>
+                <li>60 ghantar beshi practical video guide</li>
+                <li>CapCut Pro full version shompurno free</li>
+                <li>Mayajal style-e rohosshomoy video making o voiceover secret</li>
+                <li>YouTube automation o cash cow channel toirir purnanggo koushol</li>
+            </ul>
+        `
+    },
+    {
+        id: 13,
+        title: "Web Development Masterclass",
+        category: "web",
+        price: 549,
+        originalPrice: 1999,
+        image: "images/web_dev.jpg",
+        shortDesc: "HTML, CSS, JavaScript ebong Responsive Design-er shompurno guideline.",
+        fullDesc: "Zero theke website toiri ebong free server-e host korar purnanggo practical course."
+    },
+    {
+        id: 14,
         title: "Graphic Design Complete Suite",
         category: "graphics",
-        price: 399,
+        price: 449,
         originalPrice: 1200,
         image: "images/graphic_design.jpg",
-        shortDesc: "Photoshop & Illustrator দিয়ে প্রফেশনাল ডিজাইন শিখুন সহজ ভাষায়।",
-        fullDesc: "সোশ্যাল মিডিয়া ব্যানার, লোগো এবং কোর্স কভার ৩ডি মকআপ ডিজাইনের কমপ্লিট প্যাকেজ।"
+        shortDesc: "Photoshop & Illustrator diye professional design shikhun sohoj vashay.",
+        fullDesc: "Social media banner, logo ebong course cover 3D mockup designer complete package."
     }
 ];
 
-// DOM Elemente নির্বাচন
+// DOM Element Selection
 const container = document.getElementById('courseContainer');
 const searchInput = document.getElementById('searchInput');
 const filterBtns = document.querySelectorAll('.filter-btn');
 
-// কোর্স কার্ড রেন্ডার করা
+// Render Courses & Products
 function renderCourses(courseList) {
     container.innerHTML = '';
     if (courseList.length === 0) {
-        container.innerHTML = '<div class="col-12 text-center text-secondary py-5">কোনো কোর্স পাওয়া যায়নি!</div>';
+        container.innerHTML = '<div class="col-12 text-center text-secondary py-5">Kono product paoya jayni!</div>';
         return;
     }
 
@@ -75,9 +211,9 @@ function renderCourses(courseList) {
                         <span class="original-price">৳${course.originalPrice}</span>
                     </div>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-outline-info btn-sm" onclick="openDetails(${course.id})">বিবরণ দেখুন</button>
+                        <button class="btn btn-outline-info btn-sm" onclick="openDetails(${course.id})">Biboron Dekhun</button>
                         <a href="${getWhatsappLink(course.title, course.price)}" target="_blank" class="btn btn-whatsapp btn-sm">
-                            <i class="fa-brands fa-whatsapp me-1"></i>WhatsApp-এ কিনুন
+                            <i class="fa-brands fa-whatsapp me-1"></i>WhatsApp-e Kinun
                         </a>
                     </div>
                 </div>
@@ -87,13 +223,13 @@ function renderCourses(courseList) {
     });
 }
 
-// হোয়াটসঅ্যাপ লিংক জেনারেট করা
+// WhatsApp Order Link Generator
 function getWhatsappLink(title, price) {
-    const msg = encodeURIComponent(`হ্যালো One Digital, আমি "${title}" কোর্সটি ৳${price} দিয়ে কিনতে চাই। অর্ডারের নিয়মটি বলবেন।`);
+    const msg = encodeURIComponent(`Hello One Digital, ami "${title}" product-ti ৳${price} dame kinte chai. Order-er niyomti bolben.`);
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
 }
 
-// মোডাল এ ডিটেইলস দেখানো
+// Modal View Details
 function openDetails(id) {
     const course = courses.find(c => c.id === id);
     if (!course) return;
@@ -103,7 +239,7 @@ function openDetails(id) {
         <div class="text-center mb-3">
             <img src="${course.image}" class="img-fluid rounded border border-secondary" style="max-height: 250px;" onerror="this.src='https://via.placeholder.com/600x300?text=One+Digital'">
         </div>
-        <h6 class="fw-bold text-info">কোর্সের বিবরণ:</h6>
+        <h6 class="fw-bold text-info">Product-er Biboron:</h6>
         <div>${course.fullDesc}</div>
     `;
     document.getElementById('modalPrice').innerText = `৳${course.price}`;
@@ -114,14 +250,16 @@ function openDetails(id) {
     modal.show();
 }
 
-// সার্চ ফিল্টারিং
-searchInput.addEventListener('input', (e) => {
-    const text = e.target.value.toLowerCase();
-    const filtered = courses.filter(c => c.title.toLowerCase().includes(text) || c.shortDesc.toLowerCase().includes(text));
-    renderCourses(filtered);
-});
+// Search Functionality
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        const text = e.target.value.toLowerCase();
+        const filtered = courses.filter(c => c.title.toLowerCase().includes(text) || c.shortDesc.toLowerCase().includes(text));
+        renderCourses(filtered);
+    });
+}
 
-// ক্যাটাগরি ফিল্টারিং
+// Category Filter Functionality
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         filterBtns.forEach(b => {
@@ -141,5 +279,5 @@ filterBtns.forEach(btn => {
     });
 });
 
-// প্রথম লোড
+// Initial Render
 renderCourses(courses);
