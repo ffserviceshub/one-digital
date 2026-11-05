@@ -3,19 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Digital - Digital Courses & Subscriptions</title>
+    <title>One Digital - Premium Digital Courses & Subscriptions</title>
     <!-- Bootstrap CSS & FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --accent-color: #25d366;
+            --dark-bg: #0b0f19;
+            --card-bg: #161f30;
+            --border-color: #243047;
+            --glow-color: rgba(14, 165, 233, 0.4);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #f1f5f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styling */
+        .custom-navbar {
+            background-color: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .brand-icon {
+            color: #0ea5e9;
+            animation: pulse-glow 2s infinite alternate;
+        }
+
+        /* Keyframe Animations */
+        @keyframes pulse-glow {
+            0% { transform: scale(1); filter: drop-shadow(0 0 2px #0ea5e9); }
+            100% { transform: scale(1.15); filter: drop-shadow(0 0 10px #38bdf8); }
+        }
+
+        @keyframes floatUpDown {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section Animation */
+        .hero-section {
+            background: radial-gradient(circle at top, #1e293b 0%, #0b0f19 100%);
+            padding: 80px 0 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge {
+            animation: floatUpDown 3s ease-in-out infinite;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Card Animation & Glassmorphism */
+        .course-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 30px var(--glow-color);
+        }
+
+        .course-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .course-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-img {
+            transform: scale(1.1);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            color: #38bdf8;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .price-tag {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #4ade80;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-left: 6px;
+        }
+
+        /* Animated Buttons */
+        .btn-whatsapp {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(45deg, #128c7e, #25d366);
+            color: #fff;
+            transform: scale(1.03);
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            border-radius: 16px;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Header / Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold text-info fs-3" href="#">
-                <i class="fa-solid fa-bolt me-2"></i>One Digital
+            <a class="navbar-brand brand-logo" href="#">
+                <i class="fa-solid fa-bolt brand-icon me-2"></i>One Digital
             </a>
             <div class="d-flex align-items-center gap-2">
                 <a href="#courses" class="btn btn-outline-info btn-sm rounded-pill px-3">প্রোডাক্টসমূহ</a>
@@ -26,10 +204,12 @@
     <!-- Hero Section -->
     <section class="hero-section text-center">
         <div class="container">
-            <span class="badge bg-info text-dark px-3 py-2 rounded-pill mb-3 fw-bold">ইনস্ট্যান্ট ডেলিভারি ও ২০০% বিশ্বস্ত সার্ভিস!</span>
-            <h1 class="display-5 fw-bold mb-3 text-white">One Digital প্রিমিয়াম সার্ভিস ও কোর্সসমূহ</h1>
+            <span class="badge bg-info text-dark px-3 py-2 rounded-pill mb-3 fw-bold hero-badge">
+                <i class="fa-solid fa-shield-halved me-1"></i> ২০০% বিশ্বস্ত সার্ভিস ও ফাস্ট ডেলিভারি!
+            </span>
+            <h1 class="display-5 fw-bold mb-3 text-white">One Digital প্রিমিয়াম কোর্স ও সাবস্ক্রিপশন</h1>
             <p class="text-secondary fs-5 mx-auto" style="max-width: 650px;">
-                ইউটিউব কোর্স, সফটওয়্যার প্যাকেজ এবং AI/OTT সাবস্ক্রিপশন কিনুন আকর্ষণীয় মূল্যে।
+                ইউটিউব কোর্স, সফটওয়্যার প্যাকেজ এবং AI/OTT সাবস্ক্রিপশন কিনুন সেরা মূল্যে।
             </p>
         </div>
     </section>
@@ -54,11 +234,11 @@
         </div>
     </section>
 
-    <!-- Products & Courses Section -->
+    <!-- Products Section -->
     <section id="courses" class="py-4">
         <div class="container">
             <div class="row g-4" id="courseContainer">
-                <!-- app.js থেকে এখানে প্রোডাক্ট কার্ডগুলো আসবে -->
+                <!-- JavaScript animations-সহ কার্ড রেন্ডার হবে -->
             </div>
         </div>
     </section>
@@ -94,8 +274,255 @@
         </div>
     </footer>
 
-    <!-- Bootstrap & JS -->
+    <!-- Bootstrap & JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="app.js"></script>
+    <script>
+        // আপনার হোয়াটসঅ্যাপ নম্বর (কান্ট্রি কোড সহ):
+        const WHATSAPP_NUMBER = "8801700000000"; 
+
+        // ১৪টি সম্পূর্ণ প্রোডাক্ট ডাটাবেজ
+        const courses = [
+            {
+                id: 1,
+                title: "ChatGPT Go 1 Device (1 Month)",
+                category: "subscription",
+                price: 250,
+                originalPrice: 400,
+                image: "images/chatgpt.jpg", 
+                shortDesc: "১ মাসের জন্য ১টি ডিভাইসে ব্যবহারের জন্য ChatGPT Go সাবস্ক্রিপশন।",
+                fullDesc: `<ul class="lh-lg"><li>১টি ডিভাইসে পার্সোনাল ব্যবহারের সুযোগ</li><li>১ মাসের মেয়াদ (Instant Delivery)</li><li>ফাস্ট রেসপন্স ও নো-ল্যাগ সাপোর্ট</li></ul>`
+            },
+            {
+                id: 2,
+                title: "ChatGPT Plus 1 Device (1 Month)",
+                category: "subscription",
+                price: 459,
+                originalPrice: 700,
+                image: "images/chatgpt_plus.jpg", 
+                shortDesc: "১ মাসের জন্য ১টি ডিভাইসে ব্যবহারের জন্য ChatGPT Plus (GPT-4) এক্সেস।",
+                fullDesc: `<ul class="lh-lg"><li>GPT-4 ও GPT-4o মডেল এক্সেস</li><li>DALL-E 3 ইমেজ জেনারেটর ব্যবহার করার সুবিধা</li><li>অ্যাডভান্সড ডাটা এনালাইসিস ও ফাইল আপলোড</li></ul>`
+            },
+            {
+                id: 3,
+                title: "ChatGPT Go Full Account (1 Month)",
+                category: "subscription",
+                price: 700,
+                originalPrice: 1000,
+                image: "images/chatgpt_full.jpg", 
+                shortDesc: "১ মাসের ফুল প্রাইভেট একাউন্ট (ChatGPT Go)।",
+                fullDesc: `<ul class="lh-lg"><li>১০০% প্রাইভেট ফুল একাউন্ট</li><li>যেকোনো ডিভাইসে আনলিমিটেড ব্যবহার করতে পারবেন</li></ul>`
+            },
+            {
+                id: 4,
+                title: "ChatGPT Plus Full Account (1 Month)",
+                category: "subscription",
+                price: 2000,
+                originalPrice: 2800,
+                image: "images/chatgpt_plus_full.jpg", 
+                shortDesc: "১ মাসের জন্য সম্পূর্ণ প্রাইভেট ChatGPT Plus ফুল একাউন্ট।",
+                fullDesc: `<ul class="lh-lg"><li>ChatGPT Plus-এর সব প্রিমিয়াম ফিচার আনলকড</li><li>১০০% প্রাইভেট ফুল একাউন্ট</li></ul>`
+            },
+            {
+                id: 5,
+                title: "YouTube Premium (1 Month)",
+                category: "subscription",
+                price: 200,
+                originalPrice: 350,
+                image: "images/yt_premium.jpg", 
+                shortDesc: "১ মাসের জন্য অ্যাড-ফ্রি ইউটিউব ভিডিও এবং YouTube Music।",
+                fullDesc: `<ul class="lh-lg"><li>কোনো বিজ্ঞাপন ছাড়া ভিডিও দেখার সুবিধা</li><li>ব্যাকগ্রাউন্ড প্লে ও YouTube Music Premium</li></ul>`
+            },
+            {
+                id: 6,
+                title: "YouTube Premium (6 Months)",
+                category: "subscription",
+                price: 500,
+                originalPrice: 900,
+                image: "images/yt_premium_6m.jpg", 
+                shortDesc: "৬ মাসের জন্য অ্যাড-ফ্রি ইউটিউব ভিডিও এবং YouTube Music।",
+                fullDesc: `<ul class="lh-lg"><li>৬ মাস মেয়াদী অ্যাড-ফ্রি ইউটিউব এক্সেস</li><li>ইউটিউব ব্যাকগ্রাউন্ড প্লে ও মিউজিক মেম্বারশিপ</li></ul>`
+            },
+            {
+                id: 7,
+                title: "CapCut Premium Subscription",
+                category: "subscription",
+                price: 200,
+                originalPrice: 400,
+                image: "images/capcut.jpg", 
+                shortDesc: "CapCut Pro-এর সব প্রফেশনাল এডিটিং ইফেক্টস ও ফিচারস।",
+                fullDesc: `<ul class="lh-lg"><li>ওয়াটারমার্ক ছাড়া ভিডিও এক্সপোর্ট</li><li>সকল প্রফেশনাল ফিল্টার, ইফেক্ট ও AI ক্যাপশন</li></ul>`
+            },
+            {
+                id: 8,
+                title: "Gemini Premium Subscription",
+                category: "subscription",
+                price: 250,
+                originalPrice: 500,
+                image: "images/gemini.jpg", 
+                shortDesc: "Google Gemini Advanced-এর সেরা এআই পাওয়ার ও ফিচারস এক্সেস।",
+                fullDesc: `<ul class="lh-lg"><li>Google AI Advanced মডেলের দ্রুত উত্তর</li><li>কোডিং ও কনটেন্ট রাইটিং সাপোর্ট</li></ul>`
+            },
+            {
+                id: 9,
+                title: "গোপাল ভাঁড় নাচ-বল্টু YouTube সিক্রেট কোর্স",
+                category: "youtube",
+                price: 200,
+                originalPrice: 1500,
+                image: "images/gopal_bhar_course.jpg", 
+                shortDesc: "শূন্য থেকে ইউটিউব ক্যারিয়ার গড়ুন এবং গোপাল ভাঁড় & বল্টু ভিডিও দিয়ে আয় করুন!",
+                fullDesc: `<ul class="lh-lg"><li>ভিডিও তৈরি ও আপলোডের সম্পূর্ণ গাইড</li><li>SEO কৌশল ও মনিটাইজেশন গাইডলাইন</li><li class="text-info fw-bold">অর্ডার দেওয়ার সাথে সাথেই ইনস্ট্যান্ট ড্রাইভ লিংক পাবেন!</li></ul>`
+            },
+            {
+                id: 10,
+                title: "PC Software Combo Pack (অল-ইন-ওয়ান)",
+                category: "software",
+                price: 349,
+                originalPrice: 999,
+                image: "images/pc_software_combo.jpg",
+                shortDesc: "কম্পিউটারের সব দরকারি সফটওয়্যার একসাথে! (লাইফটাইম মেয়াদে প্রি-অ্যাক্টিভেটেড)",
+                fullDesc: `<ul class="lh-lg"><li>Windows OS, MS Office, Adobe Full Suite, AutoCAD, IDM</li><li class="text-warning fw-bold">বোনাস: ৫০GB+ গ্রাফিক্স কালেকশন</li></ul>`
+            },
+            {
+                id: 11,
+                title: "Windows Genuine License & Lifetime Key",
+                category: "software",
+                price: 250,
+                originalPrice: 1000,
+                image: "images/windows_activation.jpg",
+                shortDesc: "Windows 10/11 Pro & Home - 25-Digit Product Key সহ লাইফটাইম অ্যাক্টিভেশন।",
+                fullDesc: `<ul class="lh-lg"><li>Windows 10/11 Genuine License Key</li><li>Full Lifetime Activation</li></ul>`
+            },
+            {
+                id: 12,
+                title: "মায়াজালের ইউটিউব সিক্রেট কোর্স",
+                category: "youtube",
+                price: 240,
+                originalPrice: 15000,
+                image: "images/mayajal_course.jpg",
+                shortDesc: "৫৫ টি ক্লাস, ৬০ ঘণ্টা+ ভিডিও এবং সাথে ফ্রি CapCut Pro!",
+                fullDesc: `<ul class="lh-lg"><li>৫৫ টি মাস্টারক্লাস ভিডিও লেসন</li><li>মায়াজাল স্টাইলে রহস্যময় ভিডিও মেকিং সিক্রেট</li></ul>`
+            },
+            {
+                id: 13,
+                title: "Web Development Masterclass",
+                category: "web",
+                price: 549,
+                originalPrice: 1999,
+                image: "images/web_dev.jpg",
+                shortDesc: "HTML, CSS, JavaScript এবং Responsive Design-এর সম্পূর্ণ গাইডলাইন।",
+                fullDesc: `<ul class="lh-lg"><li>জিরো থেকে ওয়েবসাইট তৈরি ও ফ্রি হোস্টিং শেখার সুযোগ</li></ul>`
+            },
+            {
+                id: 14,
+                title: "Graphic Design Complete Suite",
+                category: "graphics",
+                price: 449,
+                originalPrice: 1200,
+                image: "images/graphic_design.jpg",
+                shortDesc: "Photoshop & Illustrator দিয়ে প্রফেশনাল ডিজাইন শিখুন সহজ ভাষায়।",
+                fullDesc: `<ul class="lh-lg"><li>লোগো, সোশ্যাল মিডিয়া ব্যানার ও ৩ডি মকআপ ডিজাইন</li></ul>`
+            }
+        ];
+
+        const container = document.getElementById('courseContainer');
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Staggered Fade-In Animation Rendering
+        function renderCourses(courseList) {
+            container.innerHTML = '';
+            if (courseList.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center text-secondary py-5">কোনো প্রোডাক্ট পাওয়া যায়নি!</div>';
+                return;
+            }
+
+            courseList.forEach((course, index) => {
+                const card = document.createElement('div');
+                card.className = 'col-md-4';
+                const delay = (index % 6) * 0.1; // Staggered Animation Delay
+                
+                card.innerHTML = `
+                    <div class="course-card" style="animation-delay: ${delay}s;">
+                        <div class="course-img-wrapper">
+                            <img src="${course.image}" class="course-img" alt="${course.title}" onerror="this.src='https://via.placeholder.com/400x220?text=One+Digital'">
+                            <span class="category-badge">${course.category.toUpperCase()}</span>
+                        </div>
+                        <div class="p-3 d-flex flex-column flex-grow-1">
+                            <h5 class="fw-bold fs-6">${course.title}</h5>
+                            <p class="text-secondary small flex-grow-1 mb-2">${course.shortDesc}</p>
+                            <div class="mb-3">
+                                <span class="price-tag">৳${course.price}</span>
+                                <span class="original-price">৳${course.originalPrice}</span>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-info btn-sm rounded-pill" onclick="openDetails(${course.id})">বিবরণ দেখুন</button>
+                                <a href="${getWhatsappLink(course.title, course.price)}" target="_blank" class="btn btn-whatsapp btn-sm rounded-pill">
+                                    <i class="fa-brands fa-whatsapp me-1"></i>WhatsApp-এ কিনুন
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function getWhatsappLink(title, price) {
+            const msg = encodeURIComponent(`হ্যালো One Digital, আমি "${title}" প্রোডাক্টটি ৳${price} দিয়ে কিনতে চাই। অর্ডারের নিয়মটি বলবেন।`);
+            return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+        }
+
+        function openDetails(id) {
+            const course = courses.find(c => c.id === id);
+            if (!course) return;
+
+            document.getElementById('modalTitle').innerText = course.title;
+            document.getElementById('modalBody').innerHTML = `
+                <div class="text-center mb-3">
+                    <img src="${course.image}" class="img-fluid rounded border border-secondary" style="max-height: 240px;" onerror="this.src='https://via.placeholder.com/600x300?text=One+Digital'">
+                </div>
+                <h6 class="fw-bold text-info">প্রোডাক্টের বিবরণ:</h6>
+                <div>${course.fullDesc}</div>
+            `;
+            document.getElementById('modalPrice').innerText = `৳${course.price}`;
+            document.getElementById('modalOriginalPrice').innerText = `৳${course.originalPrice}`;
+            document.getElementById('modalWhatsappBtn').href = getWhatsappLink(course.title, course.price);
+
+            const modal = new bootstrap.Modal(document.getElementById('courseModal'));
+            modal.show();
+        }
+
+        // Live Search Filter
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const text = e.target.value.toLowerCase();
+                const filtered = courses.filter(c => c.title.toLowerCase().includes(text) || c.shortDesc.toLowerCase().includes(text));
+                renderCourses(filtered);
+            });
+        }
+
+        // Category Filter Buttons
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('btn-info', 'active');
+                    b.classList.add('btn-outline-info');
+                });
+                btn.classList.remove('btn-outline-info');
+                btn.classList.add('btn-info', 'active');
+
+                const cat = btn.getAttribute('data-category');
+                if (cat === 'all') {
+                    renderCourses(courses);
+                } else {
+                    const filtered = courses.filter(c => c.category === cat);
+                    renderCourses(filtered);
+                }
+            });
+        });
+
+        // Initial Execution
+        renderCourses(courses);
+    </script>
 </body>
 </html>
