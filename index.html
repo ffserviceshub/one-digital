@@ -498,7 +498,7 @@
 
             document.getElementById('modalTitle').innerText = course.title;
             
-            // If course has embedded video preview (YouTube without related videos)
+            // YouTube embed with ?rel=0&modestbranding=1 parameters
             let videoHtml = course.videoEmbed ? course.videoEmbed : `<div class="text-center mb-3"><img src="${course.image}" class="img-fluid rounded border border-secondary" style="max-height: 240px;" onerror="this.src='https://via.placeholder.com/600x300?text=One+Digital'"></div>`;
             
             document.getElementById('modalBody').innerHTML = `
