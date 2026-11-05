@@ -3,97 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Digital - Digital Courses & Products</title>
+    <title>One Digital - Premium Digital Courses & Products</title>
+    <!-- Bootstrap CSS & FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #0d6efd;
-            --accent-color: #25d366;
-            --dark-bg: #0f172a;
-            --card-bg: #1e293b;
-        }
-
-        body {
-            background-color: var(--dark-bg);
-            color: #f8fafc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.6rem;
-            color: #38bdf8 !important;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
-            padding: 60px 0;
-            border-bottom: 1px solid #334155;
-        }
-
-        .course-card {
-            background: var(--card-bg);
-            border: 1px solid #334155;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .course-img {
-            height: 220px;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        .price-tag {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #4ade80;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-left: 8px;
-        }
-
-        .btn-whatsapp {
-            background-color: var(--accent-color);
-            color: #fff;
-            font-weight: 600;
-            border: none;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1da851;
-            color: #fff;
-        }
-
-        .modal-content {
-            background-color: var(--card-bg);
-            color: #f8fafc;
-            border: 1px solid #334155;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Header / Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary">
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-bolt me-2"></i>One Digital</a>
-            <div class="ms-auto">
-                <a href="#courses" class="btn btn-outline-info btn-sm">Courses</a>
+            <a class="navbar-brand fw-bold text-info fs-3" href="#">
+                <i class="fa-solid fa-bolt me-2"></i>One Digital
+            </a>
+            <div class="d-flex align-items-center gap-2">
+                <a href="#courses" class="btn btn-outline-info btn-sm rounded-pill px-3">কোর্সসমূহ</a>
             </div>
         </div>
     </nav>
@@ -101,17 +26,37 @@
     <!-- Hero Section -->
     <section class="hero-section text-center">
         <div class="container">
-            <h1 class="fw-bold mb-3">One Digital Premium Digital Courses</h1>
-            <p class="text-secondary fs-5">Learn digital skills, start earning online, and grow your career with instant access.</p>
+            <span class="badge bg-info text-dark px-3 py-2 rounded-pill mb-3 fw-bold">১০% থেকে ৫০% পর্যন্ত বিশেষ ছাড়!</span>
+            <h1 class="display-5 fw-bold mb-3 text-white">One Digital প্রিমিয়াম ডিজিটাল কোর্সসমূহ</h1>
+            <p class="text-secondary fs-5 mx-auto" style="max-width: 650px;">
+                ইউটিউবিং, ওয়েব ডেভেলপমেন্ট ও গ্রাফিক্স ডিজাইনের সেরা কোর্স দিয়ে শুরু করুন আপনার অনলাইন ইনকাম জার্নি।
+            </p>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="container my-4">
+        <div class="row g-3 justify-content-between align-items-center">
+            <div class="col-md-5">
+                <div class="input-group">
+                    <span class="input-group-text bg-dark border-secondary text-secondary"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" id="searchInput" class="form-control bg-dark border-secondary text-white" placeholder="কোর্সের নাম দিয়ে খুঁজুন...">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex flex-wrap gap-2 justify-md-content-end" id="categoryFilters">
+                <button class="btn btn-sm btn-info filter-btn active" data-category="all">সব কোর্স</button>
+                <button class="btn btn-sm btn-outline-info filter-btn" data-category="youtube">ইউটিউব</button>
+                <button class="btn btn-sm btn-outline-info filter-btn" data-category="web">ওয়েব ডেভেলপমেন্ট</button>
+                <button class="btn btn-sm btn-outline-info filter-btn" data-category="graphics">গ্রাফিক্স</button>
+            </div>
         </div>
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="py-5">
+    <section id="courses" class="py-4">
         <div class="container">
-            <h2 class="text-center mb-4 fw-bold">Amader Popular Courses</h2>
             <div class="row g-4" id="courseContainer">
-                <!-- Dynamic Course Cards render through JS -->
+                <!-- JavaScript দিয়ে কার্ড লোড হবে -->
             </div>
         </div>
     </section>
@@ -119,119 +64,36 @@
     <!-- Modal for Course Details -->
     <div class="modal fade" id="courseModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
+            <div class="modal-content text-white">
                 <div class="modal-header border-secondary">
-                    <h5 class="modal-title fw-bold" id="modalTitle">Course Title</h5>
+                    <h5 class="modal-title fw-bold" id="modalTitle">কোর্সের নাম</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="modalBody">
                     <!-- Dynamic Details -->
                 </div>
-                <div class="modal-footer border-secondary">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a id="modalWhatsappBtn" href="#" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp me-2"></i>WhatsApp-e Order Korun</a>
+                <div class="modal-footer border-secondary justify-content-between">
+                    <div>
+                        <span class="fs-4 fw-bold text-success" id="modalPrice"></span>
+                        <span class="text-decoration-line-through text-muted ms-2" id="modalOriginalPrice"></span>
+                    </div>
+                    <a id="modalWhatsappBtn" href="#" target="_blank" class="btn btn-whatsapp px-4 rounded-pill">
+                        <i class="fa-brands fa-whatsapp me-2"></i>WhatsApp-এ অর্ডার করুন
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="text-center py-4 border-top border-secondary text-secondary mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 One Digital. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Apnar WhatsApp Number (Country code shoho):
-        const WHATSAPP_NUMBER = "8801700000000"; 
-
-        // Course Data List
-        const courses = [
-            {
-                id: 1,
-                title: "গোপাল ভাঁড় নাচ-বল্টু YouTube আপলোড সিক্রেট কোর্স",
-                price: 499,
-                originalPrice: 1500,
-                image: "images/gopal_bhar_course.jpg", // GitHub repo images/ folder
-                shortDesc: "শূন্য থেকে ইউটিউব ক্যারিয়ার গড়ুন এবং গোপাল ভাঁড় & বল্টু ভিডিও দিয়ে আয় করুন!",
-                fullDesc: `
-                    <ul>
-                        <li>ভিডিও তৈরি ও আপলোডের সম্পূর্ণ গাইড[cite: 2]</li>
-                        <li>ট্রেন্ডিং টপিক খুঁজে কনটেন্ট তৈরি[cite: 2]</li>
-                        <li>চ্যানেল অপটিমাইজেশন ও SEO কৌশল[cite: 2]</li>
-                        <li>ইউটিউব মনিটাইজেশন সম্পর্কে A to Z[cite: 2]</li>
-                        <li>আয় বাড়ানোর কৌশল ও ইনকামের উৎস[cite: 2]</li>
-                        <li>Watch Time ও ভিডিও রিটেনশন বাড়ানোর উপায়[cite: 2]</li>
-                        <li><strong>অর্ডার দেওয়ার সাথে সাথেই ইমেইলে ইনস্ট্যান্ট ড্রাইভ লিংক পাবেন![cite: 2]</strong></li>
-                    </ul>
-                `
-            },
-            {
-                id: 2,
-                title: "Web Development Masterclass",
-                price: 499,
-                originalPrice: 1999,
-                image: "images/web_dev.jpg",
-                shortDesc: "HTML, CSS, JavaScript ebong Web development-er A-Z shikhoon.",
-                fullDesc: "Complete web development path to build dynamic websites from scratch."
-            },
-            {
-                id: 3,
-                title: "Graphic Design Complete Suite",
-                price: 399,
-                originalPrice: 1200,
-                image: "images/graphic_design.jpg",
-                shortDesc: "Photoshop & Illustrator shikhun sohoj vabay.",
-                fullDesc: "Master graphic design, branding, logo creation, and banner designs."
-            }
-        ];
-
-        // Render Courses
-        const container = document.getElementById('courseContainer');
-        courses.forEach(course => {
-            const card = document.createElement('div');
-            card.className = 'col-md-4';
-            card.innerHTML = `
-                <div class="course-card">
-                    <img src="${course.image}" class="course-img" alt="${course.title}" onerror="this.src='https://via.placeholder.com/400x220?text=One+Digital+Course'">
-                    <div class="p-3 d-flex flex-column flex-grow-1">
-                        <h5 class="fw-bold">${course.title}</h5>
-                        <p class="text-secondary small flex-grow-1">${course.shortDesc}</p>
-                        <div class="mb-3">
-                            <span class="price-tag">৳${course.price}</span>
-                            <span class="original-price">৳${course.originalPrice}</span>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-outline-info btn-sm" onclick="openDetails(${course.id})">Details Dekhun</button>
-                            <a href="${getWhatsappLink(course.title, course.price)}" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fa-brands fa-whatsapp me-2"></i>Order Korun</a>
-                        </div>
-                    </div>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-
-        function getWhatsappLink(title, price) {
-            const msg = encodeURIComponent(`Hello One Digital, ami "${title}" course-ti ৳${price} dame kinte chai. Complete process-ti janaben.`);
-            return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
-        }
-
-        function openDetails(id) {
-            const course = courses.find(c => c.id === id);
-            if(!course) return;
-
-            document.getElementById('modalTitle').innerText = course.title;
-            document.getElementById('modalBody').innerHTML = `
-                <div class="text-center mb-3">
-                    <img src="${course.image}" class="img-fluid rounded" style="max-height: 250px;" onerror="this.src='https://via.placeholder.com/600x300?text=One+Digital'">
-                </div>
-                <h5>Description:</h5>
-                <div>${course.fullDesc}</div>
-                <div class="mt-3">
-                    <span class="price-tag">Price: ৳${course.price}</span>
-                    <span class="original-price">৳${course.originalPrice}</span>
-                </div>
-            `;
-            document.getElementById('modalWhatsappBtn').href = getWhatsappLink(course.title, course.price);
-
-            const modal = new bootstrap.Modal(document.getElementById('courseModal'));
-            modal.show();
-        }
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
