@@ -19,6 +19,40 @@
     document.addEventListener('mousemove',e=>{const b=e.target.closest('.btn-whatsapp,.filter-btn');if(!b)return;const r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);b.style.transform='translate('+dx*.10+'px,'+dy*.15+'px)';});
     document.addEventListener('mouseout',e=>{const b=e.target.closest('.btn-whatsapp,.filter-btn');if(b&&!b.contains(e.relatedTarget))b.style.transform='';});
   }
+  // Reveal major page sections as they enter the viewport.
+  const sectionTargets = document.querySelectorAll('.hero-section, #courses, footer, body > .container');
+  if (!reduced && 'IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('od-section-in'); sectionObserver.unobserve(entry.target); }
+    }), { threshold: 0.08 });
+    sectionTargets.forEach((section, index) => {
+      if (index > 0) section.classList.add('od-section-reveal');
+      sectionObserver.observe(section);
+    });
+  } else { sectionTargets.forEach(section => section.classList.add('od-section-in')); }
+
+  // Scroll progress and layered hero parallax.
+  const progressBar = document.querySelector('.od-scroll-progress span');
+  const hero = document.querySelector('.hero-section');
+  const heroContent = hero && hero.querySelector('.container');
+  let scrollTick = false;
+  const updateScrollEffects = () => {
+    const maxScroll = document.documentElement.scrollHeight - innerHeight;
+    if (progressBar) progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? scrollY / maxScroll : 0) + ')';
+    if (hero && innerWidth > 767) {
+      const offset = Math.min(scrollY, hero.offsetHeight);
+      hero.style.setProperty('--od-parallax-y', (offset * 0.20) + 'px');
+      if (heroContent) heroContent.style.transform = 'translate3d(0,' + (offset * -0.10) + 'px,0)';
+    } else if (heroContent) heroContent.style.transform = '';
+    scrollTick = false;
+  };
+  addEventListener('scroll', () => {
+    if (scrollTick) return;
+    scrollTick = true;
+    requestAnimationFrame(updateScrollEffects);
+  }, { passive: true });
+  updateScrollEffects();
+
   const observe=()=>{
     const nodes=document.querySelectorAll('#courseContainer .course-card:not(.od-observed)');
     if(!nodes.length)return;
@@ -30,6 +64,4 @@
   observe();
   const container=document.getElementById('courseContainer');
   if(container)new MutationObserver(()=>observe()).observe(container,{childList:true});
-  let ticking=false;
-  addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const hero=document.querySelector('.hero-section');if(hero&&innerWidth>767)hero.style.backgroundPosition='center '+(scrollY*.22)+'px';ticking=false})},{passive:true});
 })();
