@@ -208,6 +208,7 @@
     <link rel="stylesheet" href="assets/advanced-effects.css">
 </head>
 <body>
+    <div class="od-scroll-progress" aria-hidden="true"><span></span></div>
 
     <!-- Header / Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
@@ -248,8 +249,6 @@
                 <button class="btn btn-sm btn-outline-info filter-btn" data-category="subscription">সাবস্ক্রিপশন (AI & OTT)</button>
                 <button class="btn btn-sm btn-outline-info filter-btn" data-category="youtube">ইউটিউব কোর্স</button>
                 <button class="btn btn-sm btn-outline-info filter-btn" data-category="software">সফটওয়্যার</button>
-                <button class="btn btn-sm btn-outline-info filter-btn" data-category="web">ওয়েব ডেভেলপমেন্ট</button>
-                <button class="btn btn-sm btn-outline-info filter-btn" data-category="graphics">গ্রাফিক্স</button>
             </div>
         </div>
     </section>
@@ -423,26 +422,6 @@
                 shortDesc: "৫৫ টি ক্লাস, ৬০ ঘণ্টা+ ভিডিও এবং সাথে ফ্রি CapCut Pro!",
                 fullDesc: `<ul class="lh-lg"><li>৫৫ টি মাস্টারক্লাস ভিডিও লেসন</li><li>৬০ ঘণ্টার বেশি প্র্যাকটিক্যাল গাইডলাইন</li><li>CapCut Pro ফুল ভার্সন সম্পূর্ণ ফ্রি</li><li>মায়াজাল স্টাইলে রহস্যময় ভিডিও মেকিং ও ভয়েসওভার সিক্রেট</li><li>ইউটিউব অটোমেশন ও ক্যাশ কাউ চ্যানেল তৈরির কৌশল</li></ul>`
             },
-            {
-                id: 13,
-                title: "Web Development Masterclass",
-                category: "web",
-                price: 549,
-                originalPrice: 1999,
-                image: "images/web_dev.jpg",
-                shortDesc: "HTML, CSS, JavaScript এবং Responsive Design-এর সম্পূর্ণ গাইডলাইন।",
-                fullDesc: `<ul class="lh-lg"><li>জিরো থেকে ওয়েবসাইট তৈরি ও ফ্রি হোস্টিং শেখার সুযোগ</li></ul>`
-            },
-            {
-                id: 14,
-                title: "Graphic Design Complete Suite",
-                category: "graphics",
-                price: 449,
-                originalPrice: 1200,
-                image: "images/graphic_design.jpg",
-                shortDesc: "Photoshop & Illustrator দিয়ে প্রফেশনাল ডিজাইন শিখুন সহজ ভাষায়।",
-                fullDesc: `<ul class="lh-lg"><li>লোগো, সোশ্যাল মিডিয়া ব্যানার ও ৩ডি মকআপ ডিজাইন</li></ul>`
-            }
         ];
 
         const container = document.getElementById('courseContainer');
