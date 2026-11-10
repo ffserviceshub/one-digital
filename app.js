@@ -26,7 +26,7 @@ const courses = [
         category: "subscription",
         price: 459,
         originalPrice: 700,
-        image: "images/chatgpt_plus.jpg", 
+        image: "assets/chatgpt plus.jpg", 
         shortDesc: "১ মাসের জন্য ১টি ডিভাইসে ব্যবহারের জন্য ChatGPT Plus (GPT-4) এক্সেস।",
         fullDesc: `
             <ul class="lh-lg">
@@ -59,7 +59,7 @@ const courses = [
         category: "subscription",
         price: 2000,
         originalPrice: 2800,
-        image: "images/chatgpt_plus_full.jpg", 
+        image: "assets/chatgpt pro.png", 
         shortDesc: "১ মাসের জন্য সম্পূর্ণ প্রাইভেট ChatGPT Plus ফুল একাউন্ট।",
         fullDesc: `
             <ul class="lh-lg">
@@ -125,7 +125,7 @@ const courses = [
         category: "subscription",
         price: 250,
         originalPrice: 500,
-        image: "images/gemini.jpg", 
+        image: "assets/gemini pro.jpg", 
         shortDesc: "Google Gemini Advanced-এর সেরা এআই পাওয়ার ও ফিচারস এক্সেস।",
         fullDesc: `
             <ul class="lh-lg">
