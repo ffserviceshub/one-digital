@@ -251,6 +251,39 @@
             .shop-section-heading { margin-bottom:12px; }
         }
 
+
+        /* Featured best-sellers on the storefront cover */
+        .featured-section { padding: 22px 0 10px; }
+        .featured-shell { position:relative; overflow:hidden; padding:22px; border:1px solid rgba(56,189,248,.24); border-radius:22px; background:radial-gradient(circle at 100% 0%,rgba(14,165,233,.16),transparent 38%),linear-gradient(135deg,#17243a,#101827 65%,#111827); box-shadow:0 18px 45px rgba(0,0,0,.22); }
+        .featured-heading { display:flex; justify-content:space-between; align-items:end; gap:14px; margin-bottom:18px; }
+        .featured-kicker { color:#7dd3fc; font-size:.68rem; font-weight:850; letter-spacing:.18em; }
+        .featured-heading h2 { color:#fff; font-size:clamp(1.35rem,3vw,1.9rem); font-weight:850; margin:5px 0 4px; }
+        .featured-heading p { color:#9caec4; font-size:.86rem; margin:0; }
+        .featured-label { border:1px solid rgba(251,191,36,.4); color:#fcd34d; background:rgba(245,158,11,.1); border-radius:999px; padding:7px 12px; font-size:.72rem; font-weight:800; white-space:nowrap; }
+        .featured-card { height:100%; overflow:hidden; border:1px solid rgba(148,163,184,.2); border-radius:15px; background:rgba(9,16,29,.78); transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; }
+        .featured-card:hover { transform:translateY(-5px); border-color:#38bdf8; box-shadow:0 14px 28px rgba(0,0,0,.28); }
+        .featured-card .featured-image { height:128px; background:#0b1220; position:relative; overflow:hidden; }
+        .featured-card .featured-image img { width:100%; height:100%; object-fit:cover; display:block; }
+        .featured-ribbon { position:absolute; top:9px; left:9px; padding:4px 8px; border-radius:7px; background:linear-gradient(90deg,#f59e0b,#fbbf24); color:#1f2937; font-size:.62rem; font-weight:900; }
+        .featured-info { padding:11px; }
+        .featured-title { min-height:2.7em; color:#f8fafc; font-size:.82rem; line-height:1.35; font-weight:800; margin:0 0 7px; }
+        .featured-desc { min-height:2.2em; color:#94a3b8; font-size:.69rem; line-height:1.45; margin:0 0 9px; }
+        .featured-bottom { display:flex; justify-content:space-between; align-items:center; gap:6px; margin-bottom:10px; }
+        .featured-price { color:#6ee7b7; font-size:1.08rem; font-weight:900; }
+        .featured-type { color:#7dd3fc; font-size:.62rem; font-weight:750; }
+        .featured-actions { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+        .featured-actions .btn { padding:6px 3px; border-radius:8px; font-size:.7rem; font-weight:750; }
+        @media(max-width:575px) {
+            .featured-shell { padding:15px 12px; border-radius:17px; }
+            .featured-card .featured-image { height:105px; }
+            .featured-info { padding:8px; }
+            .featured-title { font-size:.72rem; }
+            .featured-desc { font-size:.64rem; }
+            .featured-price { font-size:.95rem; }
+            .featured-actions { grid-template-columns:1fr; }
+            .featured-heading { align-items:start; }
+        }
+
     </style>
     <link rel="stylesheet" href="assets/advanced-effects.css">
 </head>
@@ -279,6 +312,24 @@
             <p class="text-secondary fs-5 mx-auto" style="max-width: 650px;">
                 ইউটিউব কোর্স, সফটওয়্যার প্যাকেজ এবং AI/OTT সাবস্ক্রিপশন কিনুন সেরা মূল্যে।
             </p>
+        </div>
+    </section>
+
+
+    <!-- Best-selling products highlighted on the storefront cover -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-shell">
+                <div class="featured-heading">
+                    <div>
+                        <span class="featured-kicker">CUSTOMER FAVOURITES</span>
+                        <h2><i class="fa-solid fa-star text-warning me-2"></i>জনপ্রিয় ও বেশি বিক্রিত প্রোডাক্ট</h2>
+                        <p>আমাদের জনপ্রিয় পছন্দের প্রোডাক্টগুলো এক নজরে দেখুন।</p>
+                    </div>
+                    <span class="featured-label"><i class="fa-solid fa-fire me-1"></i> BEST SELLERS</span>
+                </div>
+                <div class="row g-2 g-md-3" id="featuredProducts"></div>
+            </div>
         </div>
     </section>
 
@@ -577,6 +628,42 @@
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
 
+
+        // Highlight the five requested best-selling products near the top of the storefront.
+        function renderFeaturedProducts() {
+            const featuredIds = [19, 20, 21, 22, 3];
+            const featuredContainer = document.getElementById('featuredProducts');
+            if (!featuredContainer) return;
+            featuredContainer.innerHTML = '';
+            featuredIds.forEach((id) => {
+                const course = courses.find(item => item.id === id);
+                if (!course) return;
+                const card = document.createElement('div');
+                card.className = 'col-6 col-md-4 col-lg';
+                card.innerHTML = `
+                    <article class="featured-card">
+                        <div class="featured-image">
+                            <img src="${course.image}" alt="${course.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x220?text=One+Digital'">
+                            <span class="featured-ribbon"><i class="fa-solid fa-fire me-1"></i>POPULAR</span>
+                        </div>
+                        <div class="featured-info">
+                            <h3 class="featured-title">${course.title}</h3>
+                            <p class="featured-desc">${course.shortDesc}</p>
+                            <div class="featured-bottom">
+                                <span class="featured-price">৳${course.price}</span>
+                                <span class="featured-type">TOP PICK</span>
+                            </div>
+                            <div class="featured-actions">
+                                <button class="btn btn-outline-info" onclick="openDetails(${course.id})">বিস্তারিত</button>
+                                <a class="btn btn-whatsapp" href="${getWhatsappLink(course.title, course.price)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> অর্ডার</a>
+                            </div>
+                        </div>
+                    </article>
+                `;
+                featuredContainer.appendChild(card);
+            });
+        }
+
         // Staggered Fade-In Animation Rendering
         function renderCourses(courseList) {
             container.innerHTML = '';
@@ -706,6 +793,7 @@
         });
 
         // Initial Execution
+        renderFeaturedProducts();
         renderCourses(courses);
     </script>
     <script src="assets/advanced-effects.js" defer></script>
