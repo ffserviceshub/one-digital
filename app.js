@@ -3,242 +3,86 @@ const WHATSAPP_NUMBER = "8801700000000";
 
 // সম্পূর্ণ কোর্স ও প্রোডাক্ট ডাটাবেজ (সকল বিবরণ সহ)
 const courses = [
+    // ChatGPT Premium
+    { id: 1, title: "ChatGPT Premium 1 Month (Shared)", category: "subscription", price: 70, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ মাসের ChatGPT Premium shared subscription।", fullDesc: "<ul class='lh-lg'><li>মেয়াদ: ১ মাস</li><li>ধরন: Shared</li></ul>" },
+    { id: 2, title: "ChatGPT Go 1 Device (1 Month)", category: "subscription", price: 330, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ মাসের জন্য ১টি ডিভাইসে ChatGPT Go।", fullDesc: "<ul class='lh-lg'><li>১টি ডিভাইসে ব্যবহার</li><li>মেয়াদ: ১ মাস</li></ul>" },
+    { id: 3, title: "ChatGPT Plus 1 Device (1 Month)", category: "subscription", price: 540, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ মাসের জন্য ১টি ডিভাইসে ChatGPT Plus।", fullDesc: "<ul class='lh-lg'><li>১টি ডিভাইসে ব্যবহার</li><li>মেয়াদ: ১ মাস</li></ul>" },
+    { id: 4, title: "ChatGPT Go Full Account (1 Month)", category: "subscription", price: 690, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ মাসের ChatGPT Go full account।", fullDesc: "<ul class='lh-lg'><li>Full Account</li><li>মেয়াদ: ১ মাস</li></ul>" },
+    { id: 5, title: "ChatGPT Plus Private (1 Month)", category: "subscription", price: 1550, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ মাসের ChatGPT Plus private subscription।", fullDesc: "<ul class='lh-lg'><li>Private subscription</li><li>মেয়াদ: ১ মাস</li></ul>" },
+    { id: 6, title: "ChatGPT Plus Full Account (1 Month)", category: "subscription", price: 2020, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ মাসের ChatGPT Plus full account।", fullDesc: "<ul class='lh-lg'><li>Full Account</li><li>মেয়াদ: ১ মাস</li></ul>" },
+
+    // CapCut Premium
+    { id: 7, title: "CapCut Premium (1 Month)", category: "subscription", price: 80, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ মাসের CapCut Premium subscription।", fullDesc: "<ul class='lh-lg'><li>মেয়াদ: ১ মাস</li></ul>" },
+    { id: 8, title: "CapCut Premium (3 Months)", category: "subscription", price: 180, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "৩ মাসের CapCut Premium subscription।", fullDesc: "<ul class='lh-lg'><li>মেয়াদ: ৩ মাস</li></ul>" },
+    { id: 9, title: "CapCut Premium (1 Year)", category: "subscription", price: 540, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ বছরের CapCut Premium subscription।", fullDesc: "<ul class='lh-lg'><li>মেয়াদ: ১ বছর</li></ul>" },
+
+    // YouTube Premium
+    { id: 10, title: "YouTube Premium (1 Month)", category: "subscription", price: 110, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১ মাসের YouTube Premium subscription।", fullDesc: "<ul class='lh-lg'><li>মেয়াদ: ১ মাস</li></ul>" },
+    { id: 11, title: "YouTube Premium (3 Months)", category: "subscription", price: 480, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "৩ মাসের YouTube Premium subscription।", fullDesc: "<ul class='lh-lg'><li>মেয়াদ: ৩ মাস</li></ul>" },
+
+    // Gemini Premium
+    { id: 12, title: "Gemini Premium (18 Months)", category: "subscription", price: 530, originalPrice: 0, image: "assets/premium software.jpg", shortDesc: "১৮ মাসের Gemini Premium subscription।", fullDesc: "<ul class='lh-lg'><li>মেয়াদ: ১৮ মাস</li></ul>" },
+
+    // Existing course and software products
     {
-        id: 1,
-        title: "ChatGPT Go 1 Device (1 Month)",
-        category: "subscription",
-        price: 250,
-        originalPrice: 400,
-        image: "images/chatgpt.jpg", 
-        shortDesc: "১ মাসের জন্য ১টি ডিভাইসে ব্যবহারের জন্য ChatGPT Go সাবস্ক্রিপশন।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>১টি ডিভাইসে পার্সোনাল ব্যবহারের সুযোগ</li>
-                <li>১ মাসের মেয়াদ (Instant Delivery)</li>
-                <li>ফাস্ট রেসপন্স ও নো-ল্যাগ সাপোর্ট</li>
-                <li>সহজ লগইন গাইড সহ ইনস্ট্যান্ট অ্যাক্টিভেশন</li>
-            </ul>
-        `
-    },
-    {
-        id: 2,
-        title: "ChatGPT Plus 1 Device (1 Month)",
-        category: "subscription",
-        price: 459,
-        originalPrice: 700,
-        image: "assets/chatgpt plus.jpg", 
-        shortDesc: "১ মাসের জন্য ১টি ডিভাইসে ব্যবহারের জন্য ChatGPT Plus (GPT-4) এক্সেস।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>GPT-4 ও GPT-4o মডেল এক্সেস</li>
-                <li>DALL-E 3 ইমেজ জেনারেটর ব্যবহার করার সুবিধা</li>
-                <li>অ্যাডভান্সড ডাটা এনালাইসিস ও ফাইল আপলোড ফিচার</li>
-                <li>১টি ডিভাইসে ১ মাসের পূর্ণ মেয়াদী সার্ভিস</li>
-            </ul>
-        `
-    },
-    {
-        id: 3,
-        title: "ChatGPT Go Full Account (1 Month)",
-        category: "subscription",
-        price: 700,
-        originalPrice: 1000,
-        image: "images/chatgpt_full.jpg", 
-        shortDesc: "১ মাসের ফুল প্রাইভেট একাউন্ট (ChatGPT Go)।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>১০০% প্রাইভেট ফুল একাউন্ট</li>
-                <li>যেকোনো ডিভাইসে আনলিমিটেড ব্যবহার করতে পারবেন</li>
-                <li>১ মাসের গ্যারান্টি সহ ফুল অ্যাক্সেস</li>
-            </ul>
-        `
-    },
-    {
-        id: 4,
-        title: "ChatGPT Plus Full Account (1 Month)",
-        category: "subscription",
-        price: 2000,
-        originalPrice: 2800,
-        image: "assets/chatgpt pro.png", 
-        shortDesc: "১ মাসের জন্য সম্পূর্ণ প্রাইভেট ChatGPT Plus ফুল একাউন্ট।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>ChatGPT Plus-এর সব প্রিমিয়াম ফিচার আনলকড</li>
-                <li>১০০% প্রাইভেট ফুল একাউন্ট (কাউকে শেয়ার করা হবে না)</li>
-                <li>GPT-4o, Custom GPTs ও DALL-E 3 এর আনলিমিটেড ব্যবহারের সুবিধা</li>
-            </ul>
-        `
-    },
-    {
-        id: 5,
-        title: "YouTube Premium (1 Month)",
-        category: "subscription",
-        price: 200,
-        originalPrice: 350,
-        image: "images/yt_premium.jpg", 
-        shortDesc: "১ মাসের জন্য অ্যাড-ফ্রি ইউটিউব ভিডিও এবং YouTube Music।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>কোনো বিজ্ঞাপন (Ad) ছাড়াই ইউটিউব দেখার সুবিধা</li>
-                <li>স্ক্রিন অফ রেখে ব্যাকগ্রাউন্ডে গান/ভিডিও প্লে করার সুবিধা</li>
-                <li>YouTube Music Premium ফ্রিতে ব্যবহারের সুবিধা</li>
-                <li>ভিডিও অফলাইনে দেখার জন্য ডাউনলোড অপশন</li>
-            </ul>
-        `
-    },
-    {
-        id: 6,
-        title: "YouTube Premium (6 Months)",
-        category: "subscription",
-        price: 500,
-        originalPrice: 900,
-        image: "images/yt_premium_6m.jpg", 
-        shortDesc: "৬ মাসের জন্য অ্যাড-ফ্রি ইউটিউব ভিডিও এবং YouTube Music।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>৬ মাস মেয়াদী সম্পূর্ণ অ্যাড-ফ্রি ইউটিউব এক্সেস</li>
-                <li>ইউটিউব ব্যাকগ্রাউন্ড প্লে ও পিকচার-ইন-পিকচার (PiP) মোড</li>
-                <li>YouTube Music Premium মেম্বারশিপ অন্তর্ভুক্ত</li>
-            </ul>
-        `
-    },
-    {
-        id: 7,
-        title: "CapCut Premium Subscription",
-        category: "subscription",
-        price: 200,
-        originalPrice: 400,
-        image: "images/capcut.jpg", 
-        shortDesc: "CapCut Pro-এর সব প্রফেশনাল এডিটিং ইফেক্টস ও ফিচারস।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>কোনো ওয়াটারমার্ক (Watermark) ছাড়া হাই-কোয়ালিটি এক্সপোর্ট</li>
-                <li>সকল প্রফেশনাল প্রিমিয়াম ফিল্টার, টেক্সট ও ট্রানজিশন</li>
-                <li>AI অটো-ক্যাপশন (Auto Captions) ও ব্যাকগ্রাউন্ড রিমুভার</li>
-                <li>মোবাইল ও পিসি দুই ভার্সনেই ব্যবহারযোগ্য</li>
-            </ul>
-        `
-    },
-    {
-        id: 8,
-        title: "Gemini Premium Subscription",
-        category: "subscription",
-        price: 250,
-        originalPrice: 500,
-        image: "assets/gemini pro.jpg", 
-        shortDesc: "Google Gemini Advanced-এর সেরা এআই পাওয়ার ও ফিচারস এক্সেস।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>Google AI Advanced মডেলের দ্রুত উত্তর ও সর্বোচ্চ নির্ভুলতা</li>
-                <li>জটিল কোডিং, কনটেন্ট রাইটিং ও ডাটা এনালাইসিস সাপোর্ট</li>
-                <li>প্রিমিয়াম স্পিড ও প্রায়োরিটি সাপোর্ট</li>
-            </ul>
-        `
-    },
-    {
-        id: 9,
+        id: 13,
         title: "গোপাল ভাঁড় নাচ-বল্টু YouTube আপলোড সিক্রেট কোর্স",
         category: "youtube",
         price: 200,
         originalPrice: 1500,
-        image: "images/gopal_bhar_course.jpg", 
+        image: "assets/gopal vhar course.jpg",
         shortDesc: "শূন্য থেকে ইউটিউব ক্যারিয়ার গড়ুন এবং গোপাল ভাঁড় & বল্টু ভিডিও দিয়ে আয় করুন!",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>ভিডিও তৈরি ও আপলোডের সম্পূর্ণ গাইড</li>
-                <li>ট্রেন্ডিং টপিক খুঁজে কনটেন্ট তৈরি</li>
-                <li>চ্যানেল অপটিমাইজেশন ও SEO কৌশল</li>
-                <li>ইউটিউব মনিটাইজেশন সম্পর্কে A to Z</li>
-                <li>আয় বাড়ানোর কৌশল ও ইনকামের উৎস</li>
-                <li>Watch Time ও ভিডিও রিটেনশন বাড়ানোর উপায়</li>
-                <li class="text-info fw-bold">অর্ডার দেওয়ার সাথে সাথেই ইমেইলে ইনস্ট্যান্ট ড্রাইভ লিংক পেয়ে যাবেন!</li>
-            </ul>
-        `
+        fullDesc: "<ul class='lh-lg'><li>ভিডিও তৈরি ও আপলোডের সম্পূর্ণ গাইড</li><li>ট্রেন্ডিং টপিক খুঁজে কনটেন্ট তৈরি</li><li>চ্যানেল অপটিমাইজেশন ও SEO কৌশল</li><li>ইউটিউব মনিটাইজেশন সম্পর্কে A to Z</li><li>আয় বাড়ানোর কৌশল ও ইনকামের উৎস</li><li>Watch Time ও ভিডিও রিটেনশন বাড়ানোর উপায়</li><li class='text-info fw-bold'>অর্ডার দেওয়ার সাথে সাথেই ইমেইলে ইনস্ট্যান্ট ড্রাইভ লিংক পেয়ে যাবেন!</li></ul>"
     },
     {
-        id: 10,
+        id: 14,
         title: "PC Software Combo Pack (পিসির অল-ইন-ওয়ান প্রয়োজনীয় সফটওয়্যার)",
         category: "software",
         price: 349,
         originalPrice: 999,
-        image: "images/pc_software_combo.jpg",
-        shortDesc: "কম্পিউটারের সব দরকারি সফটওয়্যার এখন একসাথে, এক প্যাকেজে! (লাইফটাইম মেয়াদে প্রি-অ্যাক্টিভেটেড)",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li><strong>Windows OS:</strong> Windows XP / 7 / 10 / 11 Pro - সব ভার্সন</li>
-                <li><strong>Microsoft Office:</strong> Office 2007 থেকে 2024 এবং Office 365 (Word, Excel, PowerPoint, Outlook, OneNote সহ)</li>
-                <li><strong>Design & Editing Tools:</strong> Photoshop, Illustrator, Premiere Pro, After Effects, CorelDRAW, Camtasia, CapCut Pro, Lightroom, XD, InDesign, DrawPad, Topaz Studio</li>
-                <li><strong>Utility & Essential Tools:</strong> IDM (Internet Download Manager), 4K Downloader, Folder Locker, Data Recovery Tools, বিজয় বায়ান্নো, AutoCAD</li>
-                <li class="text-warning fw-bold">বিশেষ বোনাস: ৫০GB+ গ্রাফিক্স কালেকশন (৭,০০০+ গ্রাফিক্স ফাইল)</li>
-            </ul>
-        `
+        image: "assets/premium software.jpg",
+        shortDesc: "কম্পিউটারের দরকারি সফটওয়্যার একসাথে, এক প্যাকেজে।",
+        fullDesc: "<ul class='lh-lg'><li><strong>Windows OS:</strong> Windows XP / 7 / 10 / 11 Pro</li><li><strong>Microsoft Office:</strong> Office 2007 থেকে 2024 এবং Office 365</li><li><strong>Design & Editing Tools:</strong> Photoshop, Illustrator, Premiere Pro, After Effects, CorelDRAW, Camtasia, CapCut Pro</li><li><strong>Utility & Essential Tools:</strong> IDM, 4K Downloader, Folder Locker, Data Recovery Tools, AutoCAD</li><li class='text-warning fw-bold'>বিশেষ বোনাস: ৫০GB+ গ্রাফিক্স কালেকশন</li></ul>"
     },
     {
-        id: 11,
-        title: "Windows Genuine License & Lifetime Activation Key",
+        id: 15,
+        title: "Windows 8.1/10/11 Pro Lifetime Key",
         category: "software",
-        price: 250,
-        originalPrice: 1000,
-        image: "images/windows_activation.jpg",
-        shortDesc: "Windows 10/11 Pro & Home - 25-Digit Product Key সহ লাইফটাইম জেনুইন অ্যাক্টিভেশন।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>Windows 10 / 11 Pro ও Home ভার্সন সাপোর্ট</li>
-                <li>ফুল লাইফটাইম অ্যাক্টিভেশন (Lifetime Activation)</li>
-                <li>আসল জেনুইন লাইসেন্স কি (25-Digit Product Key)</li>
-                <li>ইনস্টলেশন সহায়তার জন্য ২৪/৭ টেকনিক্যাল সাপোর্ট</li>
-            </ul>
-        `
+        price: 330,
+        originalPrice: 0,
+        image: "assets/win pro.jpg",
+        shortDesc: "Windows 8.1/10/11 Pro Lifetime Activation Key।",
+        fullDesc: "<ul class='lh-lg'><li>Windows 8.1 / 10 / 11 Pro</li><li>Lifetime Key</li></ul>"
     },
     {
-        id: 12,
+        id: 16,
         title: "মায়াজালের ইউটিউব সিক্রেট কোর্স",
         category: "youtube",
-        price: 240,
+        price: 190,
         originalPrice: 15000,
-        image: "images/mayajal_course.jpg",
-        shortDesc: "৫৫ টি ক্লাস, ৬০ ঘণ্টা+ ভিডিও এবং সাথে ফ্রি CapCut Pro! ১৫,০০০ টাকার কোর্স মাত্র ২৪০ টাকায়!",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>৫৫ টি সম্পূর্ণ মাস্টারক্লাস ভিডিও লেসন</li>
-                <li>৬০ ঘণ্টার বেশি প্র্যাকটিক্যাল গাইডলাইন</li>
-                <li>CapCut Pro ফুল ভার্সন সম্পূর্ণ ফ্রি</li>
-                <li>মায়াজাল স্টাইলে রহস্যময় ভিডিও মেকিং ও ভয়েসওভার সিক্রেট</li>
-                <li>ইউটিউব অটোমেশন ও ক্যাশ কাউ চ্যানেল তৈরির পূর্ণাঙ্গ কৌশল</li>
-            </ul>
-        `
+        image: "assets/mayajall.jpg",
+        shortDesc: "৫৫ টি ক্লাস, ৬০ ঘণ্টা+ ভিডিও এবং সাথে ফ্রি CapCut Pro!",
+        fullDesc: "<ul class='lh-lg'><li>৫৫ টি সম্পূর্ণ মাস্টারক্লাস ভিডিও লেসন</li><li>৬০ ঘণ্টার বেশি প্র্যাকটিক্যাল গাইডলাইন</li><li>CapCut Pro ফুল ভার্সন সম্পূর্ণ ফ্রি</li><li>মায়াজাল স্টাইলে রহস্যময় ভিডিও মেকিং ও ভয়েসওভার সিক্রেট</li><li>ইউটিউব অটোমেশন ও ক্যাশ কাউ চ্যানেল তৈরির কৌশল</li></ul>"
     },
     {
-        id: 13,
+        id: 17,
         title: "Web Development Masterclass",
         category: "web",
         price: 549,
         originalPrice: 1999,
         image: "images/web_dev.jpg",
         shortDesc: "HTML, CSS, JavaScript এবং Responsive Design-এর সম্পূর্ণ গাইডলাইন।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>HTML5, CSS3, এবং Modern JavaScript শেখার সুযোগ</li>
-                <li>মোবাইল ও পিসির জন্য রেসপনসিভ ওয়েবসাইট তৈরি</li>
-                <li>GitHub ও ফ্রি সার্ভারে ওয়েবসাইট লাইভ করার উপায়</li>
-            </ul>
-        `
+        fullDesc: "<ul class='lh-lg'><li>HTML5, CSS3, এবং Modern JavaScript</li><li>মোবাইল ও পিসির জন্য রেসপনসিভ ওয়েবসাইট তৈরি</li><li>GitHub ও ফ্রি সার্ভারে ওয়েবসাইট লাইভ করার উপায়</li></ul>"
     },
     {
-        id: 14,
+        id: 18,
         title: "Graphic Design Complete Suite",
         category: "graphics",
         price: 449,
         originalPrice: 1200,
         image: "images/graphic_design.jpg",
         shortDesc: "Photoshop & Illustrator দিয়ে প্রফেশনাল ডিজাইন শিখুন সহজ ভাষায়।",
-        fullDesc: `
-            <ul class="lh-lg">
-                <li>Adobe Photoshop এবং Illustrator-এর বেসিক টু এডভান্সড বিষয়সমূহ</li>
-                <li>সোশ্যাল মিডিয়া ব্যানার, পোস্টার, লোগো এবং ব্র্যান্ডিং ডিজাইন</li>
-                <li>প্রোডাক্ট কভার ও ৩ডি মকআপ ডিজাইনের প্র্যাকটিক্যাল কমপ্লিট প্যাকেজ</li>
-            </ul>
-        `
+        fullDesc: "<ul class='lh-lg'><li>Adobe Photoshop এবং Illustrator-এর বেসিক টু এডভান্সড বিষয়সমূহ</li><li>সোশ্যাল মিডিয়া ব্যানার, পোস্টার, লোগো এবং ব্র্যান্ডিং ডিজাইন</li><li>প্রোডাক্ট কভার ও ৩ডি মকআপ ডিজাইন</li></ul>"
     }
 ];
 
@@ -269,7 +113,7 @@ function renderCourses(courseList) {
                     <p class="text-secondary small flex-grow-1 mb-2">${course.shortDesc}</p>
                     <div class="mb-3">
                         <span class="price-tag">৳${course.price}</span>
-                        <span class="original-price">৳${course.originalPrice}</span>
+                        ${course.originalPrice > course.price ? `<span class="original-price">৳${course.originalPrice}</span>` : ""}
                     </div>
                     <div class="d-grid gap-2">
                         <button class="btn btn-outline-info btn-sm" onclick="openDetails(${course.id})">বিবরণ দেখুন</button>
@@ -304,7 +148,7 @@ function openDetails(id) {
         <div>${course.fullDesc}</div>
     `;
     document.getElementById('modalPrice').innerText = `৳${course.price}`;
-    document.getElementById('modalOriginalPrice').innerText = `৳${course.originalPrice}`;
+    document.getElementById('modalOriginalPrice').innerText = course.originalPrice > course.price ? `৳${course.originalPrice}` : "";
     document.getElementById('modalWhatsappBtn').href = getWhatsappLink(course.title, course.price);
 
     const modal = new bootstrap.Modal(document.getElementById('courseModal'));
