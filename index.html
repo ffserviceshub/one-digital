@@ -216,7 +216,7 @@
         }
     
         /* Simple digital shop catalogue */
-        .shop-category-section { margin-bottom: 2.1rem; }
+        .shop-category-section { margin-bottom: 2.5rem; padding: 18px; border: 1px solid rgba(56,189,248,.12); border-radius: 18px; background: linear-gradient(145deg, rgba(22,31,48,.45), rgba(11,15,25,.2)); }
         .shop-section-heading {
             display:flex; align-items:end; justify-content:space-between;
             gap:12px; padding:0 0 13px; margin-bottom:16px;
@@ -224,8 +224,8 @@
         }
         .shop-section-kicker { color:var(--primary-color); font-size:.65rem; letter-spacing:.16em; font-weight:800; }
         .shop-section-heading h2 { font-size:clamp(1.2rem, 3vw, 1.65rem); font-weight:800; margin:4px 0 0; color:#f8fafc; }
-        .shop-section-count { color:#94a3b8; font-size:.8rem; white-space:nowrap; }
-        .shop-product-card {
+        .shop-section-count { color:#cbd5e1; font-size:.78rem; white-space:nowrap; background:rgba(14,165,233,.1); border:1px solid rgba(14,165,233,.2); border-radius:999px; padding:6px 11px; }
+        .shop-product-card { box-shadow: 0 8px 24px rgba(0,0,0,.16);
             height:100%; overflow:hidden; border:1px solid var(--border-color);
             border-radius:14px; background:var(--card-bg); display:flex; flex-direction:column;
             transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
@@ -235,13 +235,13 @@
         .shop-product-image .course-img { width:100%; height:100%; object-fit:cover; display:block; }
         .shop-product-image .category-badge { font-size:.62rem; padding:5px 8px; }
         .shop-product-info { padding:12px; display:flex; flex-direction:column; flex:1; }
-        .shop-product-title { font-size:.9rem; line-height:1.4; font-weight:750; color:#f8fafc; min-height:2.5em; margin:0 0 7px; }
+        .shop-product-title { font-size:.92rem; line-height:1.4; font-weight:750; color:#f8fafc; min-height:2.5em; margin:0 0 7px; }
         .shop-product-description { color:#94a3b8; font-size:.76rem; line-height:1.5; margin:0 0 10px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.3em; }
         .shop-product-prices { display:flex; align-items:baseline; gap:8px; margin-top:auto; margin-bottom:12px; }
         .shop-product-prices .price-tag { font-size:1.12rem; font-weight:850; color:#34d399; }
         .shop-product-prices .original-price { font-size:.78rem; }
         .shop-product-actions { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
-        .shop-product-actions .btn { border-radius:8px; font-size:.76rem; padding:7px 4px; white-space:nowrap; }
+        .shop-product-actions .btn { border-radius:9px; font-weight:700; font-size:.76rem; padding:7px 4px; white-space:nowrap; }
         @media (max-width:480px) {
             .shop-product-info { padding:9px; }
             .shop-product-title { font-size:.8rem; }
@@ -546,7 +546,7 @@
                 originalPrice: 200,
                 image: "assets/gopal%20vhar%20course.jpg",
                 shortDesc: "YouTube কনটেন্ট তৈরি, চ্যানেল সেটআপ, SEO ও ভিডিও প্রকাশের workflow শেখার কোর্স।",
-                fullDesc: "<p>YouTube কনটেন্ট তৈরি, চ্যানেল সেটআপ, SEO ও ভিডিও প্রকাশের workflow শেখার কোর্স। অ্যাক্সেস, মেয়াদ ও ডেলিভারির বিস্তারিত অর্ডারের আগে WhatsApp-এ নিশ্চিত করে নিন।</p>"
+                fullDesc: "<p>YouTube-এ কনটেন্ট তৈরি থেকে শুরু করে চ্যানেল সাজানো এবং নিয়মিত ভিডিও প্রকাশের workflow শিখুন।</p><ul class='lh-lg'><li><strong>Content Planning:</strong> ভিডিওর বিষয় নির্বাচন ও কনটেন্ট পরিকল্পনা</li><li><strong>Channel Setup:</strong> YouTube চ্যানেল সেটআপ ও প্রয়োজনীয় কাস্টমাইজেশন</li><li><strong>YouTube SEO:</strong> টাইটেল, ডিসক্রিপশন ও সার্চ-উপযোগী কনটেন্ট সাজানো</li><li><strong>Video Publishing:</strong> ভিডিও আপলোড ও প্রকাশের ধাপ</li><li><strong>Workflow:</strong> নিয়মিত কনটেন্ট প্রকাশের জন্য কার্যকর কাজের পদ্ধতি</li></ul>"
             },
             {
                 id: 21,
@@ -556,7 +556,7 @@
                 originalPrice: 190,
                 image: "assets/mayajall.jpg",
                 shortDesc: "YouTube চ্যানেল তৈরি, SEO, ভিডিও এডিটিং ও কনটেন্ট মার্কেটিং শেখার কোর্স।",
-                fullDesc: "<p>YouTube চ্যানেল তৈরি, SEO, ভিডিও এডিটিং ও কনটেন্ট মার্কেটিং শেখার কোর্স। অ্যাক্সেস, মেয়াদ ও ডেলিভারির বিস্তারিত অর্ডারের আগে WhatsApp-এ নিশ্চিত করে নিন।</p>"
+                fullDesc: "<p>YouTube চ্যানেল তৈরি, কনটেন্ট পরিকল্পনা, SEO এবং ভিডিও এডিটিংয়ের practical workflow শেখার জন্য সাজানো একটি পূর্ণাঙ্গ কোর্স।</p><ul class='lh-lg'><li><strong>৫৫টি Masterclass:</strong> ধাপে ধাপে সাজানো ৫৫টি ভিডিও লেসন</li><li><strong>৬০+ ঘণ্টা:</strong> বিস্তারিত প্র্যাকটিক্যাল গাইডলাইন</li><li><strong>Video Editing:</strong> CapCut Pro-এর ফুল ভার্সন অন্তর্ভুক্ত</li><li><strong>Content Strategy:</strong> রহস্যময়/স্টোরি-ভিত্তিক ভিডিও কনটেন্ট তৈরির কৌশল</li><li><strong>YouTube SEO:</strong> চ্যানেল ও ভিডিও অপটিমাইজেশনের ধারণা</li><li><strong>Automation:</strong> YouTube automation ও cash-cow channel workflow সম্পর্কে ধারণা</li></ul><p class='text-info fw-semibold'>কোর্সের অ্যাক্সেস ও ডেলিভারির বিস্তারিত WhatsApp-এ নিশ্চিত করে নিন।</p>"
             },
             {
                 id: 22,
@@ -566,7 +566,18 @@
                 originalPrice: 349,
                 image: "assets/premium%20software.jpg",
                 shortDesc: "Windows, Office, Design ও প্রয়োজনীয় PC tools-এর ডিজিটাল কালেকশন।",
-                fullDesc: "<p>Windows, Office, Design ও প্রয়োজনীয় PC tools-এর ডিজিটাল কালেকশন। অ্যাক্সেস, মেয়াদ ও ডেলিভারির বিস্তারিত অর্ডারের আগে WhatsApp-এ নিশ্চিত করে নিন।</p>"
+                fullDesc: "<p>দৈনন্দিন কাজ, অফিস, ডিজাইন ও প্রয়োজনীয় PC utility tools এক জায়গায় সাজানো একটি ডিজিটাল সফটওয়্যার কালেকশন।</p><ul class='lh-lg'><li><strong>Windows:</strong> Windows XP / 7 / 10 / 11 Pro collection</li><li><strong>Microsoft Office:</strong> Office 2007–2024 ও Office 365 collection</li><li><strong>Design & Editing:</strong> Photoshop, Illustrator, Premiere Pro, After Effects, CorelDRAW, Camtasia ও CapCut Pro</li><li><strong>Utility Tools:</strong> IDM, 4K Downloader, Folder Locker, Data Recovery Tools ও AutoCAD</li><li><strong>Bonus:</strong> ৫০GB+ Graphics Collection</li></ul><p class='text-warning small mb-0'>সফটওয়্যারের compatibility, installation ও activation-এর শর্ত অর্ডারের আগে নিশ্চিত করুন।</p>"
+            }
+        ,
+            {
+                id: 23,
+                title: "Windows 8.1/10/11 Pro Lifetime Key",
+                category: "software",
+                price: 170,
+                originalPrice: 170,
+                image: "assets/win%20pro.jpg",
+                shortDesc: "Windows 8.1/10/11 Pro-এর Lifetime Key।",
+                fullDesc: "<p>Windows 8.1 / 10 / 11 Pro-এর জন্য Lifetime Product Key। কেনার আগে আপনার ডিভাইসে ইনস্টল করা Windows edition মিলিয়ে নিন।</p><ul class='lh-lg'><li><strong>Edition:</strong> Windows 8.1 / 10 / 11 Pro</li><li><strong>Activation:</strong> Product Key দিয়ে Windows activation</li><li><strong>Delivery:</strong> ডিজিটাল Key ও activation নির্দেশনা</li><li><strong>Compatibility:</strong> Home ও Pro edition-এর key একে অপরের বিকল্প নয়</li><li><strong>লাইসেন্স:</strong> Key-এর ধরন ও প্রযোজ্য শর্ত অনুযায়ী ব্যবহার/transfer-এর নিয়ম ভিন্ন হতে পারে</li></ul><p class='text-warning small mb-0'>অর্ডারের আগে আপনার Windows edition নিশ্চিত করুন।</p>"
             }
         ];
 
