@@ -286,6 +286,103 @@
 
     </style>
     <link rel="stylesheet" href="assets/advanced-effects.css">
+
+    <style id="one-digital-redesign">
+      :root {
+        --primary-color:#a78bfa; --accent-color:#22d3ee; --dark-bg:#080b16;
+        --card-bg:#111827; --border-color:rgba(167,139,250,.2);
+        --glow-color:rgba(139,92,246,.22);
+      }
+      body { background:radial-gradient(ellipse at 50% -12%,rgba(91,33,182,.22),transparent 42%),#080b16; color:#f8fafc; }
+      .custom-navbar { background:rgba(8,11,22,.92); border-bottom:1px solid rgba(167,139,250,.2); }
+      .brand-logo { background:linear-gradient(100deg,#c4b5fd,#67e8f9); -webkit-background-clip:text; }
+      .brand-icon { color:#67e8f9; }
+      .hero-section { padding:clamp(42px,7vw,82px) 0 clamp(32px,5vw,56px); background:radial-gradient(ellipse at 50% 0%,rgba(124,58,237,.3),transparent 65%),linear-gradient(180deg,#111329 0%,#080b16 100%); }
+      .hero-section h1 { letter-spacing:-.035em; line-height:1.14; }
+      .hero-section p { color:#c0c6d5!important; font-size:clamp(.95rem,2.2vw,1.12rem)!important; }
+      .featured-shell { border-color:rgba(167,139,250,.28); background:radial-gradient(circle at 100% 0%,rgba(34,211,238,.12),transparent 38%),linear-gradient(135deg,#17152d,#111827 68%,#0d1423); }
+      .featured-card,.shop-product-card,.course-card { background:linear-gradient(155deg,#171c30,#101625); border-color:rgba(148,163,184,.16); }
+      .featured-card:hover,.shop-product-card:hover,.course-card:hover { border-color:#a78bfa; box-shadow:0 14px 32px rgba(124,58,237,.2); }
+      .featured-kicker,.shop-section-kicker { color:#a5b4fc; }
+      .shop-section-heading h2 { color:#f8fafc; }
+      .shop-category-section { border-color:rgba(167,139,250,.15); background:linear-gradient(145deg,rgba(30,27,58,.55),rgba(11,15,25,.28)); }
+      .shop-product-image { background:#0b1020; }
+      .shop-product-title { color:#f8fafc; }
+      .shop-product-prices .price-tag,.featured-price { color:#6ee7b7; }
+      .btn-info,.filter-btn.active { background:linear-gradient(100deg,#8b5cf6,#6366f1)!important; border-color:transparent!important; color:#fff!important; }
+      .btn-outline-info { color:#c4b5fd; border-color:rgba(167,139,250,.45); }
+      .btn-outline-info:hover { background:#6d28d9; border-color:#8b5cf6; color:#fff; }
+      .btn-whatsapp { background:linear-gradient(100deg,#16a34a,#059669); }
+      .modal-content { background:#101626; border:1px solid rgba(167,139,250,.3); }
+      .modal-header { background:linear-gradient(100deg,rgba(124,58,237,.15),rgba(34,211,238,.07)); }
+      #modalTitle { line-height:1.35; overflow-wrap:anywhere; }
+      #modalBody { color:#e5e7eb; line-height:1.75; overflow-wrap:anywhere; }
+      #modalBody h5,#modalBody h6 { color:#c4b5fd!important; line-height:1.4; }
+      #modalBody p { color:#d1d5db; }
+      #modalBody ul,#modalBody ol { padding-left:1.25rem; }
+      #modalBody li { margin-bottom:.45rem; }
+      #modalBody strong { color:#f8fafc; }
+      #modalBody .border-success { border-color:rgba(52,211,153,.5)!important; background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(15,23,42,.55)); }
+      #modalBody .row.g-3 { --bs-gutter-x:1rem; }
+      #modalBody img { max-width:100%; height:auto; }
+      .modal-footer { background:#0d1422; border-top:1px solid rgba(167,139,250,.18); gap:12px; }
+      @media (min-width:768px) {
+        .modal-dialog.modal-lg { max-width:900px; }
+        .modal-body { padding:1.5rem 1.75rem; }
+        #modalBody .video-container { max-width:760px; margin-inline:auto; }
+      }
+      @media (max-width:767.98px) {
+        .container { --bs-gutter-x:1.15rem; }
+        .hero-section { padding:38px 0 30px; }
+        .hero-section .display-5 { font-size:clamp(1.65rem,7vw,2.35rem); }
+        .hero-section .hero-badge { font-size:.68rem; line-height:1.4; white-space:normal; }
+        .featured-section { padding:14px 0 8px; }
+        .featured-shell { padding:15px 12px; border-radius:17px; }
+        .featured-heading { display:block; }
+        .featured-heading h2 { font-size:1.25rem; line-height:1.3; }
+        .featured-label { display:inline-block; margin-top:10px; }
+        .featured-card .featured-image { height:115px; }
+        .featured-info { padding:9px; }
+        .featured-title { font-size:.78rem; min-height:0; }
+        .featured-desc { font-size:.68rem; min-height:0; }
+        .featured-actions { grid-template-columns:1fr; }
+        #categoryFilters { flex-wrap:nowrap!important; overflow-x:auto; padding:2px 0 9px; scrollbar-width:thin; -webkit-overflow-scrolling:touch; }
+        #categoryFilters .filter-btn { flex:0 0 auto; }
+        #searchInput { min-height:44px; font-size:16px; }
+        .shop-category-section { padding:12px 10px; margin-bottom:1.2rem; border-radius:14px; }
+        .shop-section-heading { align-items:center; }
+        .shop-section-heading h2 { font-size:1.12rem; }
+        .shop-product-info { padding:10px; }
+        .shop-product-title { font-size:.82rem; line-height:1.35; min-height:0; }
+        .shop-product-description { font-size:.72rem; min-height:0; }
+        .shop-product-actions { grid-template-columns:1fr 1fr; gap:6px; }
+        .shop-product-actions .btn { font-size:.72rem; padding:8px 3px; }
+        .modal { padding:0!important; }
+        .modal-dialog.modal-lg { margin:0; max-width:none; min-height:100%; }
+        .modal-content { min-height:100dvh; border-radius:0; border:0; }
+        .modal-header { position:sticky; top:0; z-index:3; padding:13px 15px; }
+        .modal-title { font-size:1rem; padding-right:8px; }
+        .modal-body { padding:14px 14px 22px; overflow-x:hidden; }
+        .modal-footer { position:sticky; bottom:0; z-index:3; padding:11px 14px calc(11px + env(safe-area-inset-bottom)); flex-wrap:nowrap; }
+        #modalPrice { font-size:1.35rem!important; white-space:nowrap; }
+        #modalWhatsappBtn { font-size:.78rem; padding:10px 12px!important; white-space:nowrap; }
+        #modalBody .video-container { margin-bottom:1rem!important; border-radius:10px; }
+        #modalBody .lead { font-size:1rem; line-height:1.65; }
+        #modalBody .row.g-3 { row-gap:.75rem!important; }
+        #modalBody .col-12.col-md-6 { width:100%; }
+        #modalBody img { border-radius:10px!important; }
+        #modalBody .p-3 { padding:12px!important; }
+      }
+      @media (max-width:380px) {
+        .shop-product-actions { grid-template-columns:1fr; }
+        .featured-card .featured-image { height:95px; }
+        .modal-footer { align-items:center; }
+        #modalWhatsappBtn { font-size:.72rem; }
+      }
+      @media (prefers-reduced-motion:reduce) {
+        *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+      }
+    </style>
 </head>
 <body>
     <div class="od-scroll-progress" aria-hidden="true"><span></span></div>
@@ -600,7 +697,7 @@
                 image: "assets/mayajall.jpg",
                 videoEmbed: '<div class="video-container mb-4"><video class="course-video" controls controlsList="nodownload noplaybackrate" disablePictureInPicture playsinline preload="metadata" oncontextmenu="return false"><source src="assets/mayajaal-course-optimized.mp4" type="video/mp4">আপনার ব্রাউজার ভিডিওটি চালাতে পারছে না।</video></div>',
                 shortDesc: "৫৫টি মাস্টারক্লাস, ৬০+ ঘণ্টার গাইডলাইন, PC ও Mobile-এর জন্য ফ্রি CapCut Pro, video making, voiceover, YouTube SEO ও marketing শেখার কোর্স।",
-                fullDesc: "<div class='mb-3'><span class='badge bg-info text-dark'>55 Masterclass Lessons</span> <span class='badge bg-secondary'>60+ Hours Guide</span></div><div class='mb-4'><h6 class='fw-bold text-info mt-4'>🖼️ কোর্সের স্ক্রিনশট ও প্রিভিউ</h6><p class='small text-secondary'>কোর্সের ভেতরের কনটেন্টের নমুনা দেখতে নিচের ছবিগুলো দেখুন।</p><div class='row g-3'><div class='col-12'><img src='https://raw.githubusercontent.com/ffserviceshub/one-digital/main/assets/mayajall%20course%20ss1.png' alt='মায়াজাল YouTube course screenshot 1' class='img-fluid rounded border border-secondary w-100' loading='lazy'></div><div class='col-12'><img src='https://raw.githubusercontent.com/ffserviceshub/one-digital/main/assets/mayajall%20course%20ss2.png' alt='মায়াজাল YouTube course screenshot 2' class='img-fluid rounded border border-secondary w-100' loading='lazy'></div></div></div><p class='lead'>YouTube-এ নিজের content creation journey শুরু করতে বা আরও পরিকল্পিতভাবে ভিডিও তৈরি শিখতে চান? মায়াজালের এই কোর্সে রহস্যময় ও তথ্যবহুল ভিডিওর ধারণা, script ও content planning, voiceover, editing, SEO এবং video marketing-এর বিভিন্ন ধাপ সম্পর্কে শেখার উপকরণ রয়েছে।</p><h6 class='fw-bold text-info mt-4'>📚 কোর্সে যা যা থাকছে</h6><ul class='lh-lg'><li><strong>৫৫টি Masterclass Video Lesson:</strong> বিষয়ভিত্তিক ভিডিও লেসনের সংগ্রহ</li><li><strong>৬০ ঘণ্টার বেশি Practical Guideline:</strong> বিস্তারিত শেখার উপকরণ ও workflow</li><li><strong>CapCut Pro:</strong> ভিডিও editing-এর জন্য CapCut Pro সম্পর্কিত সুবিধা/রিসোর্স (প্রাপ্যতা ও ব্যবহারের শর্ত অর্ডারের আগে নিশ্চিত করুন)</li><li><strong>Mystery Video Making:</strong> রহস্যময়, তথ্যবহুল ও আকর্ষণীয় ভিডিওর presentation technique</li><li><strong>Voiceover:</strong> voiceover তৈরি, recording ও editing-এর ধারণা</li><li><strong>Channel Creation:</strong> YouTube channel তৈরি ও প্রাথমিক setup</li><li><strong>YouTube SEO:</strong> title, description, keyword ও video optimization</li><li><strong>Content Research:</strong> topic research, script planning ও content strategy</li><li><strong>Copyright-free Resources:</strong> ব্যবহারযোগ্য stock footage ও background music খোঁজার নির্দেশনা</li><li><strong>Audience Retention:</strong> watch time ও দর্শকের মনোযোগ ধরে রাখার কৌশল</li><li><strong>Monetization:</strong> YouTube monetization-এর শর্ত ও প্রস্তুতি সম্পর্কে ধারণা</li><li><strong>YouTube Automation:</strong> automation ও cash-cow channel workflow-এর প্রাথমিক ধারণা</li></ul><h6 class='fw-bold text-info mt-4'>🎯 কোর্স শেষে যে দক্ষতাগুলো অনুশীলন করতে পারবেন</h6><ul class='lh-lg'><li>নিজের channel-এর niche ও content direction পরিকল্পনা</li><li>ভিডিওর idea, research ও script সাজানো</li><li>voiceover এবং editing workflow তৈরি</li><li>SEO-friendly title, description ও thumbnail পরিকল্পনা</li><li>ভিডিও publish ও performance পর্যবেক্ষণের মৌলিক পদ্ধতি</li></ul><h6 class='fw-bold text-success mt-4'>✅ সুবিধা</h6><ul class='lh-lg'><li>এক জায়গায় একাধিক বিষয়ভিত্তিক lesson ও practical guideline</li><li>beginner থেকে ধাপে ধাপে শেখার উপযোগী বিষয়বিন্যাস</li><li>নিজের সুবিধামতো সময়ে lesson দেখার সুযোগ—প্রদত্ত access-এর শর্ত সাপেক্ষে</li><li>ভিডিও তৈরির বিভিন্ন ধাপ সম্পর্কে সমন্বিত ধারণা</li><li>মোবাইল বা কম্পিউটারে শেখার সুযোগ—ডেলিভারি ফরম্যাট ও compatibility সাপেক্ষে</li></ul>"
+                fullDesc: "<div class='mb-3'><span class='badge bg-info text-dark'>55 Masterclass Lessons</span> <span class='badge bg-secondary'>60+ Hours Guide</span></div><div class='mb-4'><h6 class='fw-bold text-info mt-4'>🖼️ কোর্সের স্ক্রিনশট ও প্রিভিউ</h6><p class='small text-secondary'>কোর্সের ভেতরের কনটেন্টের নমুনা দেখতে নিচের ছবিগুলো দেখুন।</p><div class='row g-3'><div class='col-12'><img src='https://raw.githubusercontent.com/ffserviceshub/one-digital/main/assets/mayajall%20course%20ss1.png' alt='মায়াজাল YouTube course screenshot 1' class='img-fluid rounded border border-secondary w-100' loading='lazy'></div><div class='col-12'><img src='https://raw.githubusercontent.com/ffserviceshub/one-digital/main/assets/mayajall%20course%20ss2.png' alt='মায়াজাল YouTube course screenshot 2' class='img-fluid rounded border border-secondary w-100' loading='lazy'></div></div></div><p class='lead'>YouTube-এ নিজের content creation journey শুরু করতে বা আরও পরিকল্পিতভাবে ভিডিও তৈরি শিখতে চান? মায়াজালের এই কোর্সে রহস্যময় ও তথ্যবহুল ভিডিওর ধারণা, script ও content planning, voiceover, editing, SEO এবং video marketing-এর বিভিন্ন ধাপ সম্পর্কে শেখার উপকরণ রয়েছে।</p><h6 class='fw-bold text-info mt-4'>📚 কোর্সে যা যা থাকছে</h6><ul class='lh-lg'><li><strong>৫৫টি Masterclass Video Lesson:</strong> বিষয়ভিত্তিক ভিডিও লেসনের সংগ্রহ</li><li><strong>৬০ ঘণ্টার বেশি Practical Guideline:</strong> বিস্তারিত শেখার উপকরণ ও workflow</li><li><strong>ফ্রি CapCut Pro (PC ও Mobile):</strong> কম্পিউটার এবং Android/iPhone—দুই ধরনের ডিভাইসেই CapCut Pro ব্যবহার করার জন্য ফ্রি রিসোর্স।<li><strong>Mystery Video Making:</strong> রহস্যময়, তথ্যবহুল ও আকর্ষণীয় ভিডিওর presentation technique</li><li><strong>Voiceover:</strong> voiceover তৈরি, recording ও editing-এর ধারণা</li><li><strong>Channel Creation:</strong> YouTube channel তৈরি ও প্রাথমিক setup</li><li><strong>YouTube SEO:</strong> title, description, keyword ও video optimization</li><li><strong>Content Research:</strong> topic research, script planning ও content strategy</li><li><strong>Copyright-free Resources:</strong> ব্যবহারযোগ্য stock footage ও background music খোঁজার নির্দেশনা</li><li><strong>Audience Retention:</strong> watch time ও দর্শকের মনোযোগ ধরে রাখার কৌশল</li><li><strong>Monetization:</strong> YouTube monetization-এর শর্ত ও প্রস্তুতি সম্পর্কে ধারণা</li><li><strong>YouTube Automation:</strong> automation ও cash-cow channel workflow-এর প্রাথমিক ধারণা</li></ul><h6 class='fw-bold text-info mt-4'>🎯 কোর্স শেষে যে দক্ষতাগুলো অনুশীলন করতে পারবেন</h6><ul class='lh-lg'><li>নিজের channel-এর niche ও content direction পরিকল্পনা</li><li>ভিডিওর idea, research ও script সাজানো</li><li>voiceover এবং editing workflow তৈরি</li><li>SEO-friendly title, description ও thumbnail পরিকল্পনা</li><li>ভিডিও publish ও performance পর্যবেক্ষণের মৌলিক পদ্ধতি</li></ul><h6 class='fw-bold text-success mt-4'>✅ সুবিধা</h6><ul class='lh-lg'><li>এক জায়গায় একাধিক বিষয়ভিত্তিক lesson ও practical guideline</li><li>beginner থেকে ধাপে ধাপে শেখার উপযোগী বিষয়বিন্যাস</li><li>নিজের সুবিধামতো সময়ে lesson দেখার সুযোগ—প্রদত্ত access-এর শর্ত সাপেক্ষে</li><li>ভিডিও তৈরির বিভিন্ন ধাপ সম্পর্কে সমন্বিত ধারণা</li><li>মোবাইল বা কম্পিউটারে শেখার সুযোগ—ডেলিভারি ফরম্যাট ও compatibility সাপেক্ষে</li></ul>"
             },
             {
                 id: 22,
