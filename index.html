@@ -285,6 +285,27 @@
         }
 
     </style>
+    <style id="mobile-card-touch-up">
+      /* Mobile product cards: shorter images and larger tap targets */
+      @media (max-width: 767.98px) {
+        .shop-product-image { height: 92px; aspect-ratio: auto; }
+        .shop-product-image .course-img { object-fit: contain; }
+        .shop-product-actions { display:flex; flex-direction:column; gap:8px; }
+        .shop-product-actions .btn,
+        .featured-actions .btn {
+          width:100%; min-height:44px; padding:10px 9px;
+          font-size:.84rem; line-height:1.25; border-radius:10px;
+          white-space:normal;
+        }
+        .featured-card .featured-image { height:88px; }
+        .featured-actions { display:flex; flex-direction:column; gap:8px; }
+      }
+      @media (max-width:380px) {
+        .shop-product-image { height:82px; }
+        .shop-product-actions .btn,
+        .featured-actions .btn { min-height:46px; font-size:.82rem; }
+      }
+</style>
     <link rel="stylesheet" href="assets/advanced-effects.css">
 
     <style id="one-digital-redesign">
